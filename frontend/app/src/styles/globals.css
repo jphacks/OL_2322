@@ -1,0 +1,20 @@
+/* styles/globals.css */
+html,
+body,
+main {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: #3e3d3d;
+}
+img {
+    height: 150px;
+    border-radius: 5%;
+}
+p {
+    color: white;
+}
+a {
+    color: deepskyblue;
+}

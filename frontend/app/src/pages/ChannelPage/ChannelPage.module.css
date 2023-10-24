@@ -1,0 +1,100 @@
+.container {
+    display: flex;
+    height: 93vh;
+    width: 100vw;
+}
+
+.sidebar {
+    width: 20%;
+}
+
+.allbox {
+    display: flex;
+    background-color: #3e3d3d;
+}
+
+.allbox2 {
+    display: flex;
+    background-color: #3e3d3d;
+    height: 50%;
+}
+
+.mainPage {
+    width: 80vw;
+}
+
+.messagesBox {
+    background-color: #2e2d2d;
+    border: 3px solid #3e3d3d;
+}
+
+.replyBar {
+    background-color: #2e2d2d;
+    border-left: 3px solid #3e3d3d;
+    border-top: 3px solid #3e3d3d;
+    border: 3px solid #3e3d3d;
+}
+
+.channeltitle {
+    background-color: #2e2d2d;
+    display: flex;
+    position: relative;
+}
+
+.ptitle {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    margin-left: 30px;
+}
+.box {
+    overflow-y: auto;
+    overscroll-behavior-y: none;
+    height: 80%;
+}
+
+.threadltitle {
+    align-items: center;
+    background-color: #2e2d2d;
+    width: 100%;
+}
+.threadltitle p {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    margin-left: 30px;
+}
+
+.img {
+    height: 25px;
+    width: 25px;
+    margin-top: 22px;
+    margin-left: 20px;
+}
+
+.imgBox {
+    right: 0;
+    margin-left: 50px;
+    display: flex;
+}
+
+.userInfo {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    z-index: 100; /* 他の要素の上に表示されるようにする */
+    margin: 5px;
+}
+
+.imgBox:hover .userInfo {
+    display: block;
+}
+
+.pinfo {
+    margin: 5px;
+    font-size: 15px;
+}

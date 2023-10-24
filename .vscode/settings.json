@@ -1,0 +1,9 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "black",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "bookmarks.useWorkaroundForFormatters": false,
+    "prettier.printWidth": 360
+}

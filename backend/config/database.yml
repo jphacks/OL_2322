@@ -1,0 +1,25 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+#
+# Install the pg driver:
+#   gem install pg
+# Ensure the PG gem is defined in your Gemfile
+#   gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: user
+  password: password
+  host: db
+development:
+  <<: *default
+  database: mydatabase_development
+test:
+  <<: *default
+  database: mydatabase_test
+production:
+  <<: *default
+  database: mydatabase_production
+  username: user
+  password: <%= ENV['BACKEND_DATABASE_PASSWORD'] %>
