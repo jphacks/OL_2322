@@ -1,16 +1,26 @@
 import React, { FC, useState } from "react";
 import s from "./Header.module.css";
-import HelpModal from "../HelpModal";
+import HelpModal from "@/components/modal/HelpModal";
+import GraphModal from "@/components/modal/GraphModal";
 
 const Header: FC = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
+    const [isGraphModalOpen, setIsGraphModalOpen] = useState(false);
 
-    const handleOpenModal = () => {
-        setIsModalOpen(true);
+    const handleOpenHelpModal = () => {
+        setIsHelpModalOpen(true);
     };
 
-    const handleCloseModal = () => {
-        setIsModalOpen(false);
+    const handleCloseHelpModal = () => {
+        setIsHelpModalOpen(false);
+    };
+
+    const handleOpenGraphModal = () => {
+        setIsGraphModalOpen(true);
+    };
+
+    const handleCloseGraphModal = () => {
+        setIsGraphModalOpen(false);
     };
 
     return (
@@ -18,7 +28,7 @@ const Header: FC = () => {
             <header className={s.headerContent}>
                 <div className={s.flexContainer}>
                     <div className={s.titleContainer}>
-                        <p className={s.title}>Slack-Message-Finder</p>
+                        <p className={s.title}>Message-Log-Viewer</p>
                     </div>
 
                     <div className={s.searchInputContainer}>
@@ -28,14 +38,21 @@ const Header: FC = () => {
                         </div>
                     </div>
 
+                    <div className={s.graphbuttonContainer}>
+                        <button className={s.GraphButton} onClick={handleOpenGraphModal}>
+                            <img src="Group 12.svg"  className={s.img2}  />
+                        </button>
+                    </div>
+
                     <div className={s.buttonContainer}>
-                        <button className={s.helpButton} onClick={handleOpenModal}>
+                        <button className={s.helpButton} onClick={handleOpenHelpModal}>
                             ?
                         </button>
                     </div>
                 </div>
             </header>
-            {isModalOpen && <HelpModal onClose={handleCloseModal} />}
+            {isGraphModalOpen && <GraphModal onClose={handleCloseGraphModal} />}
+            {isHelpModalOpen && <HelpModal onClose={handleCloseHelpModal} />}
         </section>
     );
 };
