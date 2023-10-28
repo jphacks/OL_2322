@@ -4,19 +4,6 @@ class Api::V1::MessagesController < ApplicationController
         render json: messages  # JSONとしてレンダリング
     end
 
-    def index
-        channel_id = params[:channel_id]
-        messages = Message.where(channel_id: channel_id).order(:ts)
-        grouped_messages = group_messages(messages)
-        user_ids = Member.where(channel_id: channel_id).pluck(:user_id)
-        users = User.where(user_id: user_ids).select(:user_id, :email, :image, :real_name)
-        response = {
-            grouped_messages: grouped_messages,
-            users: users
-        }
-        render json: response
-    end
-
     def allmessage
         user_id = params[:user_id]
     
@@ -75,8 +62,19 @@ class Api::V1::MessagesController < ApplicationController
         render json: response
       end
 
-      
-      
+    def index
+        channel_id = params[:channel_id]
+        messages = Message.where(channel_id: channel_id).order(:ts)
+        grouped_messages = group_messages(messages)
+        user_ids = Member.where(channel_id: channel_id).pluck(:user_id)
+        users = User.where(user_id: user_ids).select(:user_id, :email, :image, :real_name)
+        response = {
+            grouped_messages: grouped_messages,
+            users: users
+        }
+        render json: response
+    end
+    
     private
 
     def group_messages(messages)
@@ -85,6 +83,9 @@ class Api::V1::MessagesController < ApplicationController
         messages.each do |message|
             ts = message.ts
             thread_ts = message.thread_ts
+
+            new_created_at = convert_ts_to_created_at(ts)
+            message.update(created_at: new_created_at)  # created_atを更新
     
             # thread_ts が nil または空で、ts がグループ化されていない場合、新しい親メッセージ
             if (thread_ts.nil? || thread_ts.empty?) && !grouped.key?(ts)
@@ -106,11 +107,18 @@ class Api::V1::MessagesController < ApplicationController
                 end
             end
         end
-    
         grouped.values
     end
-    
-    # def get_days_message_count(messages)
 
+    private
 
+    def convert_ts_to_created_at(ts)
+        ts_parts = ts.split('.')
+        seconds = ts_parts[0].to_i
+        milliseconds = ts_parts[1][0,3]  # 最初の3文字を取得
+
+        datetime = Time.at(seconds).utc.strftime('%Y-%m-%dT%H:%M:%S')
+        new_created_at = "#{datetime}.#{milliseconds}Z"
+        new_created_at
+    end
 end
