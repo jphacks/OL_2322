@@ -10,9 +10,13 @@
     height: 15px;
 }
 
+.img2 {
+    height: 32px;
+    background-color: #3f3e3e;
+}
+
 .flexContainer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -30,6 +34,7 @@
 .searchInputContainer {
     position: relative;
     width: 50%;
+    margin-left: 5%;
 }
 
 .inputContainer {
@@ -67,7 +72,19 @@
 }
 
 .buttonContainer {
-    margin-right: 3%;
+    margin-left: 20px;
+}
+
+.graphbuttonContainer {
+    background-color: #3f3e3e;
+    border: 0;
+    margin-left: 13%;
+}
+
+.GraphButton{
+    margin-top: 5px;
+    background-color: #3f3e3e;
+    border: 0;
 }
 
 .helpButton {

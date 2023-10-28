@@ -1,0 +1,79 @@
+.modalContainer {
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 120;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.3);
+}
+
+.modalInnerContainer {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.s.closeButton {
+    z-index: 1000;
+}
+
+.modalContent {
+    position: absolute;
+    width: 60vw;
+    height: 60vh;
+    display: flex;
+    flex-flow: column;
+    padding: 20px 40px 120px 40px;
+    color: var(--accent-7);
+    border-radius: var(--card-radius);
+    background: #3e3d3d;
+    backdrop-filter: blur(10px);
+    pointer-events: auto;
+    border-radius: 25px;
+    align-items: center;
+    overflow-y: auto;
+    overscroll-behavior-y: none;
+    /*スクロールバー非表示（IE・Edge）*/
+    -ms-overflow-style: none;
+    /*スクロールバー非表示（Firefox）*/
+    scrollbar-width: none;
+}
+
+/*スクロールバー非表示（Chrome・Safari）*/
+.modalContent::-webkit-scrollbar {
+    display: none;
+}
+
+.content p {
+    font-size: 17px;
+}
+
+.apptitle {
+    font-size: 30px;
+}
+
+.person {
+    display: flex;
+}
+
+.personName {
+    margin-left: 10px;
+}
+
+.name {
+    margin-bottom: 5px;
+}
+
+.personExp {
+}
+
+.onebox {
+    border: 1px solid white;  /* 枠線を白で1pxに設定 */
+    border-radius: 8px;  /* 丸みを持つ四角形を作成 */
+    margin-bottom: 30px;
+    padding: 20px;  /* 内側の余白を設定 */
+}
