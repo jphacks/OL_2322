@@ -62,6 +62,55 @@ class Api::V1::MessagesController < ApplicationController
         render json: response
       end
 
+      def aggregate_text
+        user_id = params[:user_id]
+    
+        # user_id からそのユーザーだけの message をすべて取る
+        user_messages = Message.where(user_id: user_id)
+    
+        # すべての message の ts から、月と日を出す
+        message_dates = user_messages.map do |message|
+            # エポックタイムスタンプの小数点以下を切り捨て
+            epoch_timestamp = message.ts.to_i
+    
+            # タイムスタンプをTimeオブジェクトに変換
+            time_object = Time.at(epoch_timestamp).utc
+    
+            # Tokyoタイムゾーンに変換
+            tokyo_time = time_object.in_time_zone('Tokyo')
+    
+            # 日付のみを取得
+            date = tokyo_time.to_date
+            date
+        end.uniq
+    
+        # 一番新しい月と日を取得
+        latest_date = message_dates.max
+        start_date = latest_date - 6.days
+        one_week_dates = (start_date..latest_date)
+    
+        # 日付ごとにメッセージをグループ化
+        grouped_messages = user_messages.group_by do |message|
+            Time.at(message.ts.to_f).in_time_zone("Tokyo").to_date  # タイムゾーンを Tokyo に設定
+        end
+    
+        # 日付でフィルタリングし、ソートしてからテキストを集計
+        aggregated_text = grouped_messages.select { |date, _| one_week_dates.include?(date) }
+            .sort_by { |date, _| date }
+            .map do |date, date_messages|
+                text_for_date = date_messages.map { |message| message.text.gsub("\n", ",") }.join("\n")  # \n を , に変換
+                "#{text_for_date}。"
+            end
+        
+        # 結果を JSON として返す
+        response = {
+            user_id: user_id,
+            aggregated_text: aggregated_text
+        }
+        
+        render json: response
+    end
+    
     def index
         channel_id = params[:channel_id]
         messages = Message.where(channel_id: channel_id).order(:ts)
