@@ -1,0 +1,52 @@
+[
+    {
+        "client_msg_id": "277b7786-0fe6-4c5d-b8cf-ebf940c2f85c",
+        "type": "message",
+        "text": "aiueo",
+        "user": "U05RZKPRMBN",
+        "ts": "1698215523.199199",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "kEZLe",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "aiueo"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "0ab9e0fd-d791-4545-b3d3-d1d45db651f8",
+        "type": "message",
+        "text": "test",
+        "user": "U05RZKPRMBN",
+        "ts": "1698215512.988479",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "gB9fq",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "test"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    }
+]

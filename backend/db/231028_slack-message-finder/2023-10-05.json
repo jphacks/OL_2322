@@ -1,0 +1,188 @@
+[
+    {
+        "client_msg_id": "c2e02a04-4a9d-43d1-8a65-df2c23e64873",
+        "type": "message",
+        "text": "<https://github.com/TMLlaboratory/slack-message-finder/pull/37>\n\u30de\u30fc\u30b8\u3057\u307e\u3057\u305f",
+        "user": "U05RX3M7P27",
+        "ts": "1696522331.390139",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "rNCcv",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/37"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n\u30de\u30fc\u30b8\u3057\u307e\u3057\u305f"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "image_url": "https://user-images.githubusercontent.com/95607264/272071245-05c5fafe-b427-46e9-8f8a-9e8333a24e2e.png",
+                "image_width": 1600,
+                "image_height": 416,
+                "image_bytes": 179392,
+                "id": 1,
+                "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                "ts": 1696522182,
+                "color": "6f42c1",
+                "bot_id": "B05V0KEQZUG",
+                "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/37",
+                "is_app_unfurl": true,
+                "app_id": "A01BP7R4KNY",
+                "fallback": "1600x416px image",
+                "text": "*\u5bfe\u5fdc Issue32*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/32|#32>\n\n*\u6982\u8981*\n\nslackBot\u306e\u74b0\u5883\u69cb\u7bc9\n\n*\u5b9f\u88c5\u5185\u5bb9*\n\nSlack\u306e\u30ef\u30fc\u30af\u30b9\u30da\u30fc\u30b9\u3067\u5f85\u6a5f\u3055\u305b\u308bBot\u3092Slack API\u30da\u30fc\u30b8\u304b\u3089\u8a2d\u5b9a\u3057\uff0c\u30ef\u30fc\u30af\u30b9\u30da\u30fc\u30b9\u306bBot\u3092\u8ffd\u52a0\uff0e  \n\u30ed\u30fc\u30ab\u30eb\u306eBot\u304c\u52d5\u4f5c\u3059\u308bPython\u74b0\u5883\u3068\u30ef\u30fc\u30af\u30b9\u30da\u30fc\u30b9\u306eSlack Bot\u3092\u63a5\u7d9a\u3059\u308b\n\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n<https://user-images.githubusercontent.com/95607264/272071245-05c5fafe-b427-46e9-8f8a-9e8333a24e2e.png|image> <https://user-images.githubusercontent.com/95607264/272070998-1b71d086-0ee2-405b-8892-eef1c5b4dce1.png|\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8 2023-10-03 4 45 08>\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2611\ufe0e Bolt app is running! \u3068\u8868\u793a\u3055\u308c\u308b\u304b\n\u2611\ufe0e \u9001\u3063\u305f\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u30bf\u30fc\u30df\u30ca\u30eb\u4e0a\u3067\u8868\u793a\u3055\u308c\u308b\u304b  \n    \u3000- `print(body)` \u3067\u8868\u793a\u3057\u3066\u3044\u308b\u3060\u3051\u306e\u306f\u305a\uff0e\u4f55\u968e\u518d\u9001\u3055\u308c\u308b\u304b\u306a\u3069\u306f\u4e0d\u660e\n\u2022 [ ]\n\n*\u5099\u8003*\n\n\u4eca\u5f8c\uff0c\u9069\u5207\u306bDB\u306b\u4fdd\u5b58\u3059\u308b",
+                "title": "#37 Slack bot(Python bolt)\u306e\u30bb\u30c3\u30c8\u30a2\u30c3\u30d7",
+                "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/37",
+                "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                "fields": [
+                    {
+                        "value": "<https://github.com/YosukeIida|@YosukeIida>",
+                        "title": "Assignees",
+                        "short": true
+                    }
+                ],
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "text": "\u30de\u30fc\u30b8\u3057\u307e\u3057\u305f",
+        "user": "U05RZKPRMBN",
+        "ts": "1696519693.091639",
+        "thread_ts": "1696318951.798619",
+        "root": {
+            "client_msg_id": "5c0b176e-4266-47bc-947e-93de5220fecb",
+            "type": "message",
+            "text": "<!channel>\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059\n\u30d5\u30ed\u30f3\u30c8\u30a8\u30f3\u30c9\u95a2\u4fc2\u306e\u30d5\u30a1\u30a4\u30eb\u306e\u5909\u66f4\u306f\u3001CSS\u306e\u5909\u66f4\u306a\u3069\u3092\u884c\u306a\u3063\u3066\u3044\u307e\u3059\n\u6539\u5584\u306f\u6b21\u306eissue\u3067\u884c\u3044\u307e\u3059\n<https://github.com/TMLlaboratory/slack-message-finder/pull/35>",
+            "user": "U05RX3M7P27",
+            "ts": "1696318951.798619",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "EWf",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "broadcast",
+                                    "range": "channel"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059\n\u30d5\u30ed\u30f3\u30c8\u30a8\u30f3\u30c9\u95a2\u4fc2\u306e\u30d5\u30a1\u30a4\u30eb\u306e\u5909\u66f4\u306f\u3001CSS\u306e\u5909\u66f4\u306a\u3069\u3092\u884c\u306a\u3063\u3066\u3044\u307e\u3059\n\u6539\u5584\u306f\u6b21\u306eissue\u3067\u884c\u3044\u307e\u3059\n"
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/35"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "T05RX3HH4V9",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1696318809,
+                    "color": "36a64f",
+                    "bot_id": "B05V0KEQZUG",
+                    "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/35",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#35 [feat]\u7c21\u6613\u7684\u306a\u30d0\u30c3\u30af\u30a8\u30f3\u30c9\u306e\u8a2d\u5b9a\u3001CSS\u306e\u554f\u984c\u90e8\u5206\u306e\u524a\u9664",
+                    "text": "*\u5bfe\u5fdc Issue30*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/30|#30>\n\n*\u6982\u8981*\n\nGemfile\u306brack-cors\u3092\u5165\u308c\u308b  \n\u30d5\u30ed\u30f3\u30c8\u304b\u3089\u306e\u30a2\u30af\u30bb\u30b9\u3092\u8a31\u53ef\u3059\u308b  \n\u7c21\u5358\u306acontroller\u3092\u4f5c\u6210\u3059\u308b\n\n*\u5b9f\u88c5\u5185\u5bb9*\n\nbackend/config/application.rb  \nbackend/Gemfile  \nbackend/config/routes.rb  \n\u5404\u7a2e\u30b3\u30f3\u30c8\u30ed\u30fc\u30e9\u30fc\u306e\u4f5c\u6210  \n\u30d5\u30ed\u30f3\u30c8\u30a8\u30f3\u30c9\u95a2\u4fc2\u306e\u30d5\u30a1\u30a4\u30eb\u306f\u307b\u3068\u3093\u3069\u524a\u9664\u306e\u307f\u884c\u306a\u3063\u3066\u3044\u307e\u3059\n\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2022 [ ]api\u306eURL\u3092\u53e9\u3044\u305f\u3089\u3001\u304d\u3061\u3093\u3068\u30c6\u30fc\u30d6\u30eb\u306e\u4e2d\u8eab\u304c\u898b\u308c\u308b\n\u2022 [ ]\u30d5\u30ed\u30f3\u30c8\u30a8\u30f3\u30c9\u306e\u30da\u30fc\u30b8\u304cmargin\u304c\u306a\u304f\u306a\u3063\u3066\u3044\u308b\n\u2022 [ ]backend\u306e\u6574\u5099\u306e\u305f\u3081\u306e\u30b3\u30fc\u30c9\u306e\u30c1\u30a7\u30c3\u30af\u3092\u304a\u9858\u3044\u3057\u307e\u3059\n\n*\u5099\u8003*",
+                    "title": "#35 [feat]\u7c21\u6613\u7684\u306a\u30d0\u30c3\u30af\u30a8\u30f3\u30c9\u306e\u8a2d\u5b9a\u3001CSS\u306e\u554f\u984c\u90e8\u5206\u306e\u524a\u9664",
+                    "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/35",
+                    "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "thread_ts": "1696318951.798619",
+            "reply_count": 1,
+            "reply_users_count": 1,
+            "latest_reply": "1696519693.091639",
+            "reply_users": [
+                "U05RZKPRMBN"
+            ],
+            "is_locked": false,
+            "subscribed": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "aZQB7",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "\u30de\u30fc\u30b8\u3057\u307e\u3057\u305f"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "client_msg_id": "c61bc574-285d-4275-8c09-88983c76d856"
+    },
+    {
+        "client_msg_id": "a49f5158-74eb-4cd7-adb8-408dadc89530",
+        "type": "message",
+        "text": "<!channel>\n\u4eca\u601d\u3063\u305f\u3051\u3069\uff0c\u201d\u60c5\u5831\u793e\u4f1a\u3068\u8457\u4f5c\u6a29\u201d \u3068\uff0c\u6280\u80b2\u30ad\u30e3\u30f3\u30d7\u3063\u3066\u88ab\u3063\u3066\u308b\u3093\u3060\u306d",
+        "user": "U05RZKPRMBN",
+        "ts": "1696472281.223729",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "2Eq5",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "broadcast",
+                                "range": "channel"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n\u4eca\u601d\u3063\u305f\u3051\u3069\uff0c\u201d\u60c5\u5831\u793e\u4f1a\u3068\u8457\u4f5c\u6a29\u201d \u3068\uff0c\u6280\u80b2\u30ad\u30e3\u30f3\u30d7\u3063\u3066\u88ab\u3063\u3066\u308b\u3093\u3060\u306d"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "thread_ts": "1696472281.223729",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1696473196.676089",
+        "reply_users": [
+            "U05RX3M7P27"
+        ],
+        "is_locked": false,
+        "subscribed": false
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "client_msg_id": "a11a6d9d-58f0-4c8a-a44a-f93f45e21a6b",
+        "type": "message",
+        "text": "940-2136\n\u65b0\u6f5f\u770c\u9577\u5ca1\u5e02\u4e0a\u5bcc\u5ca12-101-1 \u30e1\u30be\u30f3\u306a\u304c\u307f\u306d\u2161 A-6\u53f7\u5ba4\n08042594611",
+        "user": "U05RZKPRMBN",
+        "ts": "1697555695.272459",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "/lK6h",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "940-2136\n\u65b0\u6f5f\u770c\u9577\u5ca1\u5e02\u4e0a\u5bcc\u5ca12-101-1 \u30e1\u30be\u30f3\u306a\u304c\u307f\u306d\u2161 A-6\u53f7\u5ba4\n08042594611"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    }
+]
