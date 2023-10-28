@@ -1,0 +1,252 @@
+[
+    {
+        "client_msg_id": "84aa4536-793f-4a87-87cb-055ca4dfa549",
+        "type": "message",
+        "text": "import logging\nimport os\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\n\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\nclient = WebClient(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n# Slack\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u4e00\u89a7\u3092\u53d6\u5f97\u3059\u308b\u95a2\u6570\ndef get_channel_list():\n    return client.conversations_list()[\"channels\"]\n\nchannel_list_cache = get_channel_list()\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n@app.event(\"message\")\ndef handle_message_events(body, logger):\n    channel_id = body.get(\"event\", {}).get(\"channel\")\n    channel_name = next((channel[\"name\"] for channel in channel_list_cache if channel[\"id\"] == channel_id), \"Unknown\")\n    print(f\"Channel ID: {channel_id}, Channel Name: {channel_name}\")\n    print(body)\n\n@app.event(\"channel_created\")\ndef handle_channel_created(event, client):\n    channel_id = event[\"channel\"][\"id\"]\n    channel_name = event[\"channel\"][\"name\"]\n    creator_user_id = event[\"channel\"][\"creator\"]\n    # \u65b0\u3057\u3044\u30c1\u30e3\u30f3\u30cd\u30eb\u60c5\u5831\u3092\u30ad\u30e3\u30c3\u30b7\u30e5\u306b\u8ffd\u52a0\n    channel_list_cache.append({\"id\": channel_id, \"name\": channel_name})\n    print(f\"\u30c1\u30e3\u30f3\u30cd\u30eb\u304c\u4f5c\u6210\u3055\u308c\u307e\u3057\u305f\u3002ID: {channel_id}, \u30c1\u30e3\u30f3\u30cd\u30eb\u540d: {channel_name}, \u4f5c\u6210\u8005: {creator_user_id}\")\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()",
+        "user": "U05RX3M7P27",
+        "ts": "1696604821.764689",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "5CLsh",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "import logging\nimport os\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\n\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\nclient = WebClient(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n# Slack\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u4e00\u89a7\u3092\u53d6\u5f97\u3059\u308b\u95a2\u6570\ndef get_channel_list():\n    return client.conversations_list()[\"channels\"]\n\nchannel_list_cache = get_channel_list()\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n@app.event(\"message\")\ndef handle_message_events(body, logger):\n    channel_id = body.get(\"event\", {}).get(\"channel\")\n    channel_name = next((channel[\"name\"] for channel in channel_list_cache if channel[\"id\"] == channel_id), \"Unknown\")\n    print(f\"Channel ID: {channel_id}, Channel Name: {channel_name}\")\n    print(body)\n\n@app.event(\"channel_created\")\ndef handle_channel_created(event, client):\n    channel_id = event[\"channel\"][\"id\"]\n    channel_name = event[\"channel\"][\"name\"]\n    creator_user_id = event[\"channel\"][\"creator\"]\n    # \u65b0\u3057\u3044\u30c1\u30e3\u30f3\u30cd\u30eb\u60c5\u5831\u3092\u30ad\u30e3\u30c3\u30b7\u30e5\u306b\u8ffd\u52a0\n    channel_list_cache.append({\"id\": channel_id, \"name\": channel_name})\n    print(f\"\u30c1\u30e3\u30f3\u30cd\u30eb\u304c\u4f5c\u6210\u3055\u308c\u307e\u3057\u305f\u3002ID: {channel_id}, \u30c1\u30e3\u30f3\u30cd\u30eb\u540d: {channel_name}, \u4f5c\u6210\u8005: {creator_user_id}\")\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "05258ba9-7a7e-4a24-a9b9-6d7a52c99720",
+        "type": "message",
+        "text": "```import logging\nimport os\nimport json\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\nclient = WebClient(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n\n# Slack\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u4e00\u89a7\u3092\u53d6\u5f97\u3059\u308b\u95a2\u6570\ndef get_channel_list(client: WebClient):\n    response = client.conversations_list()\n    if response[\"ok\"]:\n        return {channel[\"name\"]: channel[\"id\"] for channel in response[\"channels\"]}\n    else:\n        return {}\n\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n@app.event(\"message\")\ndef handle_message_events(body, logger):\n    channel_list = get_channel_list(client)\n    channel_id = body.get(\"event\", {}).get(\"channel\")\n    channel_name = next(\n        (name for name, id in channel_list.items() if id == channel_id), \"Unknown\"\n    )\n    print(f\"Channel ID: {channel_id}, Channel Name: {channel_name}\")\n    # <http://logger.info|logger.info>(body)\n    print(body)\n\n\n@app.event(\"channel_created\")\ndef handle_channel_created(event, client):\n    channel_id = event[\"channel\"][\"id\"]\n    channel_name = event[\"channel\"][\"name\"]\n    creator_user_id = event[\"channel\"][\"creator\"]\n    print(\n        f\"\u30c1\u30e3\u30f3\u30cd\u30eb\u304c\u4f5c\u6210\u3055\u308c\u307e\u3057\u305f\u3002ID: {channel_id}, \u30c1\u30e3\u30f3\u30cd\u30eb\u540d: {channel_name}, \u4f5c\u6210\u8005: {creator_user_id}\"\n    )\n\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()```",
+        "user": "U05RZKPRMBN",
+        "ts": "1696604728.985339",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "sl+j",
+                "elements": [
+                    {
+                        "type": "rich_text_preformatted",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "import logging\nimport os\nimport json\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\nclient = WebClient(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n\n# Slack\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u4e00\u89a7\u3092\u53d6\u5f97\u3059\u308b\u95a2\u6570\ndef get_channel_list(client: WebClient):\n    response = client.conversations_list()\n    if response[\"ok\"]:\n        return {channel[\"name\"]: channel[\"id\"] for channel in response[\"channels\"]}\n    else:\n        return {}\n\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n@app.event(\"message\")\ndef handle_message_events(body, logger):\n    channel_list = get_channel_list(client)\n    channel_id = body.get(\"event\", {}).get(\"channel\")\n    channel_name = next(\n        (name for name, id in channel_list.items() if id == channel_id), \"Unknown\"\n    )\n    print(f\"Channel ID: {channel_id}, Channel Name: {channel_name}\")\n    # logger.info(body)\n    print(body)\n\n\n@app.event(\"channel_created\")\ndef handle_channel_created(event, client):\n    channel_id = event[\"channel\"][\"id\"]\n    channel_name = event[\"channel\"][\"name\"]\n    creator_user_id = event[\"channel\"][\"creator\"]\n    print(\n        f\"\u30c1\u30e3\u30f3\u30cd\u30eb\u304c\u4f5c\u6210\u3055\u308c\u307e\u3057\u305f\u3002ID: {channel_id}, \u30c1\u30e3\u30f3\u30cd\u30eb\u540d: {channel_name}, \u4f5c\u6210\u8005: {creator_user_id}\"\n    )\n\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()"
+                            }
+                        ],
+                        "border": 0
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "fdce6492-4073-4c81-b7e3-f7f7fab41d56",
+        "type": "message",
+        "text": "```slack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:on_message|slack_bolt.App:on_message> invoked: (message: {\"envelope_id\":\"e508a365-46dd-4d9f-bdc3-223fd44e341d\",\"payload\":{\"token\":\"11PUKqzNrZP3ig0GFMBVCSYN\",\"team_id\":\"T05RX3HH4V9\",\"api_app_id\":\"A05U2RU197G\",\"event\":{\"type\":\"channel_created\",\"channel\":{\"id\":\"C05VAMT9TM4\",\"is_channel\":true,\"name\":\"test_channel4\",\"name_normalized\":\"test_channel4\",\"created\":1696604637,\"creator\":\"U05RZKPRMBN\",\"is_shared\":false,\"is_org_shared\":false,\"context_team_id\":\"T05RX3HH4V9\"},\"event_ts\":\"1696604637.001300\"},\"type\":\"event_callback\",\"event_id\":\"Ev060SB3SJ0G\",\"event_time\":1696604637,\"authorizations\":[{\"enterprise_id\":null,\"team_id\":\"T05RX3HH4V9\",\"user_id\":\"U05U9F70QKV\",\"is_bot\":true,\"is_enterprise_install\":false}],\"is_ext_shared_channel\":false},\"type\":\"events_api\",\"accepts_response_payload\":false,\"retry_attempt\":0,\"retry_reason\":\"\"})\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:A|slack_bolt.App:A> new message enqueued (current queue size: 1)\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:A|slack_bolt.App:A> message dequeued (current queue size: 0)\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Message|slack_bolt.App:Message> processing started (type: events_api, envelope_id: e508a365-46dd-4d9f-bdc3-223fd44e341d)\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Applying|slack_bolt.App:Applying> slack_bolt.middleware.ssl_check.ssl_check.SslCheck\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Applying|slack_bolt.App:Applying> slack_bolt.middleware.request_verification.request_verification.RequestVerification\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Applying|slack_bolt.App:Applying> slack_bolt.middleware.authorization.single_team_authorization.SingleTeamAuthorization\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Applying|slack_bolt.App:Applying> slack_bolt.middleware.ignoring_self_events.ignoring_self_events.IgnoringSelfEvents\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Applying|slack_bolt.App:Applying> slack_bolt.middleware.url_verification.url_verification.UrlVerification\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Checking|slack_bolt.App:Checking> listener: handle_message_events ...\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Checking|slack_bolt.App:Checking> listener: handle_channel_created ...\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Running|slack_bolt.App:Running> listener: handle_channel_created ...\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Responding|slack_bolt.App:Responding> with status: 200 body: \"\" (1 millis)\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Sending|slack_bolt.App:Sending> a message (session id: 0ca60704-7f29-423f-abda-9f645c27a7dd, message: {\"envelope_id\": \"e508a365-46dd-4d9f-bdc3-223fd44e341d\"})\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Response|slack_bolt.App:Response> time: 5 milliseconds\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Message|slack_bolt.App:Message> processing completed (type: events_api, envelope_id: e508a365-46dd-4d9f-bdc3-223fd44e341d)```",
+        "user": "U05RZKPRMBN",
+        "ts": "1696604712.263099",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Tzm",
+                "elements": [
+                    {
+                        "type": "rich_text_preformatted",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "slack-message-finder-bot-1       | DEBUG:slack_bolt.App:on_message invoked: (message: {\"envelope_id\":\"e508a365-46dd-4d9f-bdc3-223fd44e341d\",\"payload\":{\"token\":\"11PUKqzNrZP3ig0GFMBVCSYN\",\"team_id\":\"T05RX3HH4V9\",\"api_app_id\":\"A05U2RU197G\",\"event\":{\"type\":\"channel_created\",\"channel\":{\"id\":\"C05VAMT9TM4\",\"is_channel\":true,\"name\":\"test_channel4\",\"name_normalized\":\"test_channel4\",\"created\":1696604637,\"creator\":\"U05RZKPRMBN\",\"is_shared\":false,\"is_org_shared\":false,\"context_team_id\":\"T05RX3HH4V9\"},\"event_ts\":\"1696604637.001300\"},\"type\":\"event_callback\",\"event_id\":\"Ev060SB3SJ0G\",\"event_time\":1696604637,\"authorizations\":[{\"enterprise_id\":null,\"team_id\":\"T05RX3HH4V9\",\"user_id\":\"U05U9F70QKV\",\"is_bot\":true,\"is_enterprise_install\":false}],\"is_ext_shared_channel\":false},\"type\":\"events_api\",\"accepts_response_payload\":false,\"retry_attempt\":0,\"retry_reason\":\"\"})\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:A new message enqueued (current queue size: 1)\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:A message dequeued (current queue size: 0)\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Message processing started (type: events_api, envelope_id: e508a365-46dd-4d9f-bdc3-223fd44e341d)\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Applying slack_bolt.middleware.ssl_check.ssl_check.SslCheck\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Applying slack_bolt.middleware.request_verification.request_verification.RequestVerification\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Applying slack_bolt.middleware.authorization.single_team_authorization.SingleTeamAuthorization\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Applying slack_bolt.middleware.ignoring_self_events.ignoring_self_events.IgnoringSelfEvents\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Applying slack_bolt.middleware.url_verification.url_verification.UrlVerification\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Checking listener: handle_message_events ...\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Checking listener: handle_channel_created ...\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Running listener: handle_channel_created ...\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Responding with status: 200 body: \"\" (1 millis)\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Sending a message (session id: 0ca60704-7f29-423f-abda-9f645c27a7dd, message: {\"envelope_id\": \"e508a365-46dd-4d9f-bdc3-223fd44e341d\"})\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Response time: 5 milliseconds\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Message processing completed (type: events_api, envelope_id: e508a365-46dd-4d9f-bdc3-223fd44e341d)"
+                            }
+                        ],
+                        "border": 0
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "d1f4326d-20a4-4954-a653-619cd6a24d05",
+        "type": "message",
+        "text": "@app.event(\"channel_created\")\ndef handle_channel_created(event, client):\n    channel_id = event[\"channel\"][\"id\"]\n    channel_name = event[\"channel\"][\"name\"]\n    creator_user_id = event[\"channel\"][\"creator\"]  # \u4fee\u6b63\u7b87\u6240\n    print(f\"\u30c1\u30e3\u30f3\u30cd\u30eb\u304c\u4f5c\u6210\u3055\u308c\u307e\u3057\u305f\u3002ID: {channel_id}, \u30c1\u30e3\u30f3\u30cd\u30eb\u540d: {channel_name}, \u4f5c\u6210\u8005: {creator_user_id}\")",
+        "user": "U05RX3M7P27",
+        "ts": "1696604399.862839",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "guke",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "@app.event(\"channel_created\")\ndef handle_channel_created(event, client):\n    channel_id = event[\"channel\"][\"id\"]\n    channel_name = event[\"channel\"][\"name\"]\n    creator_user_id = event[\"channel\"][\"creator\"]  # \u4fee\u6b63\u7b87\u6240\n    print(f\"\u30c1\u30e3\u30f3\u30cd\u30eb\u304c\u4f5c\u6210\u3055\u308c\u307e\u3057\u305f\u3002ID: {channel_id}, \u30c1\u30e3\u30f3\u30cd\u30eb\u540d: {channel_name}, \u4f5c\u6210\u8005: {creator_user_id}\")"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "040d380e-c007-4e46-871f-777a450865f2",
+        "type": "message",
+        "text": "```slack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:on_message|slack_bolt.App:on_message> invoked: (message: {\"envelope_id\":\"cec3c7dc-31e1-4a81-991e-88f5e25aef55\",\"payload\":{\"token\":\"11PUKqzNrZP3ig0GFMBVCSYN\",\"team_id\":\"T05RX3HH4V9\",\"api_app_id\":\"A05U2RU197G\",\"event\":{\"type\":\"channel_created\",\"channel\":{\"id\":\"C0605NW8KHA\",\"is_channel\":true,\"name\":\"test_channel3\",\"name_normalized\":\"test_channel3\",\"created\":1696604199,\"creator\":\"U05RZKPRMBN\",\"is_shared\":false,\"is_org_shared\":false,\"context_team_id\":\"T05RX3HH4V9\"},\"event_ts\":\"1696604199.000900\"},\"type\":\"event_callback\",\"event_id\":\"Ev05VAL5RMM4\",\"event_time\":1696604199,\"authorizations\":[{\"enterprise_id\":null,\"team_id\":\"T05RX3HH4V9\",\"user_id\":\"U05U9F70QKV\",\"is_bot\":true,\"is_enterprise_install\":false}],\"is_ext_shared_channel\":false},\"type\":\"events_api\",\"accepts_response_payload\":false,\"retry_attempt\":0,\"retry_reason\":\"\"})\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:A|slack_bolt.App:A> new message enqueued (current queue size: 1)\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:A|slack_bolt.App:A> message dequeued (current queue size: 0)\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Message|slack_bolt.App:Message> processing started (type: events_api, envelope_id: cec3c7dc-31e1-4a81-991e-88f5e25aef55)\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Applying|slack_bolt.App:Applying> slack_bolt.middleware.ssl_check.ssl_check.SslCheck\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Applying|slack_bolt.App:Applying> slack_bolt.middleware.request_verification.request_verification.RequestVerification\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Applying|slack_bolt.App:Applying> slack_bolt.middleware.authorization.single_team_authorization.SingleTeamAuthorization\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Applying|slack_bolt.App:Applying> slack_bolt.middleware.ignoring_self_events.ignoring_self_events.IgnoringSelfEvents\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Applying|slack_bolt.App:Applying> slack_bolt.middleware.url_verification.url_verification.UrlVerification\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Checking|slack_bolt.App:Checking> listener: handle_message_events ...\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Checking|slack_bolt.App:Checking> listener: handle_channel_created ...\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Running|slack_bolt.App:Running> listener: handle_channel_created ...\nslack-message-finder-bot-1       | ERROR:<http://slack_bolt.App:Failed|slack_bolt.App:Failed> to run listener function (error: 'user')\nslack-message-finder-bot-1       | Traceback (most recent call last):\nslack-message-finder-bot-1       |   File \"/usr/local/lib/python3.8/site-packages/slack_bolt/listener/thread_runner.py\", line 120, in run_ack_function_asynchronously\nslack-message-finder-bot-1       |     listener.run_ack_function(request=request, response=response)\nslack-message-finder-bot-1       |   File \"/usr/local/lib/python3.8/site-packages/slack_bolt/listener/custom_listener.py\", line 50, in run_ack_function\nslack-message-finder-bot-1       |     return self.ack_function(\nslack-message-finder-bot-1       |   File \"main.py\", line 38, in handle_channel_created\nslack-message-finder-bot-1       |     creator_user_id = event[\"user\"]\nslack-message-finder-bot-1       | KeyError: 'user'\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Responding|slack_bolt.App:Responding> with status: 200 body: \"\" (2 millis)\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Sending|slack_bolt.App:Sending> a message (session id: 54ba24df-ec0d-45ed-983f-5daee4a538ab, message: {\"envelope_id\": \"cec3c7dc-31e1-4a81-991e-88f5e25aef55\"})\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Response|slack_bolt.App:Response> time: 9 milliseconds\nslack-message-finder-bot-1       | DEBUG:<http://slack_bolt.App:Message|slack_bolt.App:Message> processing completed (type: events_api, envelope_id: cec3c7dc-31e1-4a81-991e-88f5e25aef55)```",
+        "user": "U05RZKPRMBN",
+        "ts": "1696604325.635859",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "4g48e",
+                "elements": [
+                    {
+                        "type": "rich_text_preformatted",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "slack-message-finder-bot-1       | DEBUG:slack_bolt.App:on_message invoked: (message: {\"envelope_id\":\"cec3c7dc-31e1-4a81-991e-88f5e25aef55\",\"payload\":{\"token\":\"11PUKqzNrZP3ig0GFMBVCSYN\",\"team_id\":\"T05RX3HH4V9\",\"api_app_id\":\"A05U2RU197G\",\"event\":{\"type\":\"channel_created\",\"channel\":{\"id\":\"C0605NW8KHA\",\"is_channel\":true,\"name\":\"test_channel3\",\"name_normalized\":\"test_channel3\",\"created\":1696604199,\"creator\":\"U05RZKPRMBN\",\"is_shared\":false,\"is_org_shared\":false,\"context_team_id\":\"T05RX3HH4V9\"},\"event_ts\":\"1696604199.000900\"},\"type\":\"event_callback\",\"event_id\":\"Ev05VAL5RMM4\",\"event_time\":1696604199,\"authorizations\":[{\"enterprise_id\":null,\"team_id\":\"T05RX3HH4V9\",\"user_id\":\"U05U9F70QKV\",\"is_bot\":true,\"is_enterprise_install\":false}],\"is_ext_shared_channel\":false},\"type\":\"events_api\",\"accepts_response_payload\":false,\"retry_attempt\":0,\"retry_reason\":\"\"})\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:A new message enqueued (current queue size: 1)\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:A message dequeued (current queue size: 0)\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Message processing started (type: events_api, envelope_id: cec3c7dc-31e1-4a81-991e-88f5e25aef55)\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Applying slack_bolt.middleware.ssl_check.ssl_check.SslCheck\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Applying slack_bolt.middleware.request_verification.request_verification.RequestVerification\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Applying slack_bolt.middleware.authorization.single_team_authorization.SingleTeamAuthorization\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Applying slack_bolt.middleware.ignoring_self_events.ignoring_self_events.IgnoringSelfEvents\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Applying slack_bolt.middleware.url_verification.url_verification.UrlVerification\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Checking listener: handle_message_events ...\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Checking listener: handle_channel_created ...\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Running listener: handle_channel_created ...\nslack-message-finder-bot-1       | ERROR:slack_bolt.App:Failed to run listener function (error: 'user')\nslack-message-finder-bot-1       | Traceback (most recent call last):\nslack-message-finder-bot-1       |   File \"/usr/local/lib/python3.8/site-packages/slack_bolt/listener/thread_runner.py\", line 120, in run_ack_function_asynchronously\nslack-message-finder-bot-1       |     listener.run_ack_function(request=request, response=response)\nslack-message-finder-bot-1       |   File \"/usr/local/lib/python3.8/site-packages/slack_bolt/listener/custom_listener.py\", line 50, in run_ack_function\nslack-message-finder-bot-1       |     return self.ack_function(\nslack-message-finder-bot-1       |   File \"main.py\", line 38, in handle_channel_created\nslack-message-finder-bot-1       |     creator_user_id = event[\"user\"]\nslack-message-finder-bot-1       | KeyError: 'user'\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Responding with status: 200 body: \"\" (2 millis)\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Sending a message (session id: 54ba24df-ec0d-45ed-983f-5daee4a538ab, message: {\"envelope_id\": \"cec3c7dc-31e1-4a81-991e-88f5e25aef55\"})\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Response time: 9 milliseconds\nslack-message-finder-bot-1       | DEBUG:slack_bolt.App:Message processing completed (type: events_api, envelope_id: cec3c7dc-31e1-4a81-991e-88f5e25aef55)"
+                            }
+                        ],
+                        "border": 0
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "8cd45b05-716c-435d-80a8-95c124fd2625",
+        "type": "message",
+        "text": "@app.event(\"channel_created\")\ndef handle_channel_created(event, client):\n    channel_id = event[\"channel\"][\"id\"]\n    channel_name = event[\"channel\"][\"name\"]\n    creator_user_id = event[\"user\"]\n\n    # \u30c1\u30e3\u30f3\u30cd\u30eb\u4f5c\u6210\u306e\u60c5\u5831\u3092\u30ed\u30b0\u306b\u8a18\u9332\u307e\u305f\u306f\u901a\u77e5\u3059\u308b\u306a\u3069\u306e\u30ab\u30b9\u30bf\u30e0\u51e6\u7406\u3092\u5b9f\u884c\n    print(f\"\u30c1\u30e3\u30f3\u30cd\u30eb\u304c\u4f5c\u6210\u3055\u308c\u307e\u3057\u305f\u3002ID: {channel_id}, \u30c1\u30e3\u30f3\u30cd\u30eb\u540d: {channel_name}, \u4f5c\u6210\u8005: {creator_user_id}\")",
+        "user": "U05RZKPRMBN",
+        "ts": "1696603823.633059",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "XBWPc",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "@app.event(\"channel_created\")\ndef handle_channel_created(event, client):\n    channel_id = event[\"channel\"][\"id\"]\n    channel_name = event[\"channel\"][\"name\"]\n    creator_user_id = event[\"user\"]\n\n    # \u30c1\u30e3\u30f3\u30cd\u30eb\u4f5c\u6210\u306e\u60c5\u5831\u3092\u30ed\u30b0\u306b\u8a18\u9332\u307e\u305f\u306f\u901a\u77e5\u3059\u308b\u306a\u3069\u306e\u30ab\u30b9\u30bf\u30e0\u51e6\u7406\u3092\u5b9f\u884c\n    print(f\"\u30c1\u30e3\u30f3\u30cd\u30eb\u304c\u4f5c\u6210\u3055\u308c\u307e\u3057\u305f\u3002ID: {channel_id}, \u30c1\u30e3\u30f3\u30cd\u30eb\u540d: {channel_name}, \u4f5c\u6210\u8005: {creator_user_id}\")"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "bdf8740a-4858-43bd-a420-ea375f2fe603",
+        "type": "message",
+        "text": "<@U05SL6CB6DN>\n\nslack-message-finder-bot-1    | DEBUG:slack_sdk.web.base_client:Received the following response - status: 200, headers: {'date': 'Fri, 06 Oct 2023 13:46:38 GMT', 'server': 'Apache', 'vary': 'Accept-Encoding', 'x-slack-req-id': '46631322cc965506f6fd0e7a6ed32554', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'pragma': 'no-cache', 'cache-control': 'private, no-cache, no-store, must-revalidate', 'expires': 'Sat, 26 Jul 1997 05:00:00 GMT', 'content-type': 'application/json; charset=utf-8', 'x-accepted-oauth-scopes': 'channels:read,groups:read,mpim:read,im:read,read', 'x-oauth-scopes': 'channels:read,chat:write,im:read,channels:history,commands', 'access-control-expose-headers': 'x-slack-req-id, retry-after', 'access-control-allow-headers': 'slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid, x-b3-sampled, x-b3-flags', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'referrer-policy': 'no-referrer', 'x-slack-unique-id': 'ZSAPvsqOUNt_ZHBke7EqpQAAEB4', 'x-slack-backend': 'r', 'access-control-allow-origin': '*', 'content-length': '5931', 'via': '1.1 <http://slack-prod.tinyspeck.com|slack-prod.tinyspeck.com>, envoy-www-iad-rpafbnmo, envoy-edge-nrt-vxcdwycf', 'x-envoy-attempt-count': '1', 'x-envoy-upstream-service-time': '201', 'x-backend': 'main_normal main_canary_with_overflow main_control_with_overflow', 'x-server': 'slack-www-hhvm-main-iad-uqeq', 'x-slack-shared-secret-outcome': 'no-match', 'x-edge-backend': 'envoy-www', 'x-slack-edge-shared-secret-outcome': 'no-match', 'connection': 'close'}, body: {\"ok\":true,\"channels\":[{\"id\":\"C05RQJNS08N\",\"name\":\"\\u7269\\u54c1\\u8cfc\\u5165\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1694494578,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"\\u7269\\u54c1\\u8cfc\\u5165\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1694494578602,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"previous_names\":[],\"num_members\":6},{\"id\":\"C05RX3HHRNF\",\"name\":\"general\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1694493296,\"is_archived\":false,\"is_general\":true,\"unlinked\":0,\"name_normalized\":\"general\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1694493296479,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\\u3053\\u306e\\u30c1\\u30e3\\u30f3\\u30cd\\u30eb\\u306b\\u306f\\u3001\\u5e38\\u306b\\u3059\\u3079\\u3066\\u306e\\u30e1\\u30f3\\u30d0\\u30fc\\u304c\\u542b\\u307e\\u308c\\u307e\\u3059\\u3002\\u793e\\u5185\\u901a\\u77e5\\u3084\\u30c1\\u30fc\\u30e0\\u5168\\u4f53\\u306e\\u4f1a\\u8a71\\u306b\\u3074\\u3063\\u305f\\u308a\\u3067\\u3059\\u3002\",\"creator\":\"U05RU8QMHGV\",\"last_set\":1694493296},\"previous_names\":[],\"num_members\":6},{\"id\":\"C05RX6LQT98\",\"name\":\"\\u30bc\\u30df\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1694493377,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"\\uff7e\\uff9e\\uff90\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1694493377383,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\\u3053\\u306e\\u30c1\\u30e3\\u30f3\\u30cd\\u30eb\\u3067\\u306f #\\u30bc\\u30df \\u306b\\u3064\\u3044\\u3066\\u3069\\u3093\\u306a\\u3053\\u3068\\u3067\\u3082\\u8a71\\u3057\\u5408\\u3048\\u307e\\u3059\\u3002\\u30df\\u30fc\\u30c6\\u30a3\\u30f3\\u30b0\\u306e\\u958b\\u50ac\\u3001\\u8cc7\\u6599\\u306e\\u5171\\u6709\\u3001\\u30c1\\u30fc\\u30e0\\u4e00\\u4f53\\u3067\\u306e\\u610f\\u601d\\u6c7a\\u5b9a\\u304c\\u3067\\u304d\\u307e\\u3059\\u3002\",\"creator\":\"U05RU8QMHGV\",\"last_set\":1694493377},\"previous_names\":[],\"num_members\":6},{\"id\":\"C05RXDCCDK4\",\"name\":\"\\u96d1\\u8ac7\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1694498277,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"\\u96d1\\u8ac7\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1694498277438,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"previous_names\":[],\"num_members\":6},{\"id\":\"C05RZKL50J0\",\"name\":\"random\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1694493296,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"random\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1694493296710,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\\u3053\\u306e\\u30c1\\u30e3\\u30f3\\u30cd\\u30eb\\u3067\\u306f\\u3001\\u3069\\u3093\\u306a\\u3053\\u3068\\u3067\\u3082\\u8a71\\u305b\\u307e\\u3059\\u3002\\u30c1\\u30fc\\u30e0\\u5185\\u306e\\u30b8\\u30e7\\u30fc\\u30af\\u3084\\u3001\\u3068\\u3063\\u3055\\u306b\\u601d\\u3044\\u4ed8\\u3044\\u305f\\u30a2\\u30a4\\u30c7\\u30a2\\u3001\\u304a\\u3082\\u3057\\u308d\\u3044 GIF \\u753b\\u50cf\\u3092\\u6295\\u7a3f\\u3067\\u304d\\u307e\\u3059\\u3002\\u601d\\u3044\\u306e\\u307e\\u307e\\u306b\\u6d3b\\u7528\\u3057\\u307e\\u3057\\u3087\\u3046\\uff01\",\"creator\":\"U05RU8QMHGV\",\"last_set\":1694493296},\"previous_names\":[],\"num_members\":6},{\"id\":\"C05U9D2T2NP\",\"name\":\"test-slackbot\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1695882913,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"test-slackbot\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1695882913930,\"parent_conversation\":null,\"creator\":\"U05RZKPRMBN\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":true,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"previous_names\":[],\"num_members\":4},{\"id\":\"C05UELSBAGP\",\"name\":\"\\u60c5\\u5831\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1696299740,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"\\u60c5\\u5831\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1696299740381,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"previous_names\":[],\"num_members\":6}],\"response_metadata\":{\"next_cursor\":\"\"}}",
+        "user": "U05RX3M7P27",
+        "ts": "1696600261.347479",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "f=1f",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U05SL6CB6DN"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n\nslack-message-finder-bot-1    | DEBUG:slack_sdk.web.base_client:Received the following response - status: 200, headers: {'date': 'Fri, 06 Oct 2023 13:46:38 GMT', 'server': 'Apache', 'vary': 'Accept-Encoding', 'x-slack-req-id': '46631322cc965506f6fd0e7a6ed32554', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'pragma': 'no-cache', 'cache-control': 'private, no-cache, no-store, must-revalidate', 'expires': 'Sat, 26 Jul 1997 05:00:00 GMT', 'content-type': 'application/json; charset=utf-8', 'x-accepted-oauth-scopes': 'channels:read,groups:read,mpim:read,im:read,read', 'x-oauth-scopes': 'channels:read,chat:write,im:read,channels:history,commands', 'access-control-expose-headers': 'x-slack-req-id, retry-after', 'access-control-allow-headers': 'slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid, x-b3-sampled, x-b3-flags', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'referrer-policy': 'no-referrer', 'x-slack-unique-id': 'ZSAPvsqOUNt_ZHBke7EqpQAAEB4', 'x-slack-backend': 'r', 'access-control-allow-origin': '*', 'content-length': '5931', 'via': '1.1 "
+                            },
+                            {
+                                "type": "link",
+                                "url": "http://slack-prod.tinyspeck.com",
+                                "text": "slack-prod.tinyspeck.com"
+                            },
+                            {
+                                "type": "text",
+                                "text": ", envoy-www-iad-rpafbnmo, envoy-edge-nrt-vxcdwycf', 'x-envoy-attempt-count': '1', 'x-envoy-upstream-service-time': '201', 'x-backend': 'main_normal main_canary_with_overflow main_control_with_overflow', 'x-server': 'slack-www-hhvm-main-iad-uqeq', 'x-slack-shared-secret-outcome': 'no-match', 'x-edge-backend': 'envoy-www', 'x-slack-edge-shared-secret-outcome': 'no-match', 'connection': 'close'}, body: {\"ok\":true,\"channels\":[{\"id\":\"C05RQJNS08N\",\"name\":\"\\u7269\\u54c1\\u8cfc\\u5165\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1694494578,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"\\u7269\\u54c1\\u8cfc\\u5165\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1694494578602,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"previous_names\":[],\"num_members\":6},{\"id\":\"C05RX3HHRNF\",\"name\":\"general\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1694493296,\"is_archived\":false,\"is_general\":true,\"unlinked\":0,\"name_normalized\":\"general\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1694493296479,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\\u3053\\u306e\\u30c1\\u30e3\\u30f3\\u30cd\\u30eb\\u306b\\u306f\\u3001\\u5e38\\u306b\\u3059\\u3079\\u3066\\u306e\\u30e1\\u30f3\\u30d0\\u30fc\\u304c\\u542b\\u307e\\u308c\\u307e\\u3059\\u3002\\u793e\\u5185\\u901a\\u77e5\\u3084\\u30c1\\u30fc\\u30e0\\u5168\\u4f53\\u306e\\u4f1a\\u8a71\\u306b\\u3074\\u3063\\u305f\\u308a\\u3067\\u3059\\u3002\",\"creator\":\"U05RU8QMHGV\",\"last_set\":1694493296},\"previous_names\":[],\"num_members\":6},{\"id\":\"C05RX6LQT98\",\"name\":\"\\u30bc\\u30df\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1694493377,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"\\uff7e\\uff9e\\uff90\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1694493377383,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\\u3053\\u306e\\u30c1\\u30e3\\u30f3\\u30cd\\u30eb\\u3067\\u306f #\\u30bc\\u30df \\u306b\\u3064\\u3044\\u3066\\u3069\\u3093\\u306a\\u3053\\u3068\\u3067\\u3082\\u8a71\\u3057\\u5408\\u3048\\u307e\\u3059\\u3002\\u30df\\u30fc\\u30c6\\u30a3\\u30f3\\u30b0\\u306e\\u958b\\u50ac\\u3001\\u8cc7\\u6599\\u306e\\u5171\\u6709\\u3001\\u30c1\\u30fc\\u30e0\\u4e00\\u4f53\\u3067\\u306e\\u610f\\u601d\\u6c7a\\u5b9a\\u304c\\u3067\\u304d\\u307e\\u3059\\u3002\",\"creator\":\"U05RU8QMHGV\",\"last_set\":1694493377},\"previous_names\":[],\"num_members\":6},{\"id\":\"C05RXDCCDK4\",\"name\":\"\\u96d1\\u8ac7\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1694498277,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"\\u96d1\\u8ac7\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1694498277438,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"previous_names\":[],\"num_members\":6},{\"id\":\"C05RZKL50J0\",\"name\":\"random\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1694493296,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"random\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1694493296710,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\\u3053\\u306e\\u30c1\\u30e3\\u30f3\\u30cd\\u30eb\\u3067\\u306f\\u3001\\u3069\\u3093\\u306a\\u3053\\u3068\\u3067\\u3082\\u8a71\\u305b\\u307e\\u3059\\u3002\\u30c1\\u30fc\\u30e0\\u5185\\u306e\\u30b8\\u30e7\\u30fc\\u30af\\u3084\\u3001\\u3068\\u3063\\u3055\\u306b\\u601d\\u3044\\u4ed8\\u3044\\u305f\\u30a2\\u30a4\\u30c7\\u30a2\\u3001\\u304a\\u3082\\u3057\\u308d\\u3044 GIF \\u753b\\u50cf\\u3092\\u6295\\u7a3f\\u3067\\u304d\\u307e\\u3059\\u3002\\u601d\\u3044\\u306e\\u307e\\u307e\\u306b\\u6d3b\\u7528\\u3057\\u307e\\u3057\\u3087\\u3046\\uff01\",\"creator\":\"U05RU8QMHGV\",\"last_set\":1694493296},\"previous_names\":[],\"num_members\":6},{\"id\":\"C05U9D2T2NP\",\"name\":\"test-slackbot\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1695882913,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"test-slackbot\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1695882913930,\"parent_conversation\":null,\"creator\":\"U05RZKPRMBN\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":true,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"previous_names\":[],\"num_members\":4},{\"id\":\"C05UELSBAGP\",\"name\":\"\\u60c5\\u5831\",\"is_channel\":true,\"is_group\":false,\"is_im\":false,\"is_mpim\":false,\"is_private\":false,\"created\":1696299740,\"is_archived\":false,\"is_general\":false,\"unlinked\":0,\"name_normalized\":\"\\u60c5\\u5831\",\"is_shared\":false,\"is_org_shared\":false,\"is_pending_ext_shared\":false,\"pending_shared\":[],\"context_team_id\":\"T05RX3HH4V9\",\"updated\":1696299740381,\"parent_conversation\":null,\"creator\":\"U05RU8QMHGV\",\"is_ext_shared\":false,\"shared_team_ids\":[\"T05RX3HH4V9\"],\"pending_connected_team_ids\":[],\"is_member\":false,\"topic\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"purpose\":{\"value\":\"\",\"creator\":\"\",\"last_set\":0},\"previous_names\":[],\"num_members\":6}],\"response_metadata\":{\"next_cursor\":\"\"}}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "a4b363aa-8472-4f9a-a39f-98ce1b81a08f",
+        "type": "message",
+        "text": "<@U05RZKPRMBN>",
+        "user": "U05RX3M7P27",
+        "ts": "1696599771.714299",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "deL",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U05RZKPRMBN"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "f06adcdd-defb-4499-8e4d-99fc88d18902",
+        "type": "message",
+        "text": "import logging\nimport os\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\n\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\nclient = WebClient(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n# Slack\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u4e00\u89a7\u3092\u53d6\u5f97\u3059\u308b\u95a2\u6570\ndef get_channel_list(client: WebClient):\n    response = client.conversations_list()\n    if response[\"ok\"]:\n        return {channel[\"name\"]: channel[\"id\"] for channel in response[\"channels\"]}\n    else:\n        return {}\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n@app.event(\"message\")\ndef handle_message_events(body, logger):\n    channel_list = get_channel_list(client)\n    channel_id = body.get(\"event\", {}).get(\"channel\")\n    channel_name = next((name for name, id in channel_list.items() if id == channel_id), \"Unknown\")\n\n    print(f\"Channel ID: {channel_id}, Channel Name: {channel_name}\")\n    <http://logger.info|logger.info>(body)\n    print(body)\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()",
+        "user": "U05RX3M7P27",
+        "ts": "1696599760.630009",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "mii6D",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "import logging\nimport os\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\n\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\nclient = WebClient(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n# Slack\u306e\u30c1\u30e3\u30f3\u30cd\u30eb\u4e00\u89a7\u3092\u53d6\u5f97\u3059\u308b\u95a2\u6570\ndef get_channel_list(client: WebClient):\n    response = client.conversations_list()\n    if response[\"ok\"]:\n        return {channel[\"name\"]: channel[\"id\"] for channel in response[\"channels\"]}\n    else:\n        return {}\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n@app.event(\"message\")\ndef handle_message_events(body, logger):\n    channel_list = get_channel_list(client)\n    channel_id = body.get(\"event\", {}).get(\"channel\")\n    channel_name = next((name for name, id in channel_list.items() if id == channel_id), \"Unknown\")\n\n    print(f\"Channel ID: {channel_id}, Channel Name: {channel_name}\")\n    "
+                            },
+                            {
+                                "type": "link",
+                                "url": "http://logger.info",
+                                "text": "logger.info"
+                            },
+                            {
+                                "type": "text",
+                                "text": "(body)\n    print(body)\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    }
+]

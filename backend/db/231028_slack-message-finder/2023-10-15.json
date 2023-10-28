@@ -1,0 +1,276 @@
+[
+    {
+        "client_msg_id": "8a5ad33a-7bd9-497d-b9c6-a711e711640a",
+        "type": "message",
+        "text": "<https://prod.liveshare.vsengsaas.visualstudio.com/join?87A9D418F82CDE21B54071D1DD69CF7C4E3D>",
+        "user": "U05RZKPRMBN",
+        "ts": "1697389866.602499",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "omhZI",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "https://prod.liveshare.vsengsaas.visualstudio.com/join?87A9D418F82CDE21B54071D1DD69CF7C4E3D"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "from_url": "https://prod.liveshare.vsengsaas.visualstudio.com/join?87A9D418F82CDE21B54071D1DD69CF7C4E3D",
+                "id": 1,
+                "original_url": "https://prod.liveshare.vsengsaas.visualstudio.com/join?87A9D418F82CDE21B54071D1DD69CF7C4E3D",
+                "fallback": "Visual Studio Code for the Web",
+                "text": "Build with Visual Studio Code, anywhere, anytime, entirely in your browser.",
+                "title": "Visual Studio Code for the Web",
+                "title_link": "https://prod.liveshare.vsengsaas.visualstudio.com/join?87A9D418F82CDE21B54071D1DD69CF7C4E3D",
+                "service_name": "vscode.dev"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "1f5ff456-1b92-4c89-a63c-5b762f386a27",
+        "type": "message",
+        "text": "\u95a2\u9023\u30da\u30fc\u30b8\u306b\u3082\u66f8\u3044\u305f\u3051\u3069\u3053\u3063\u3061\u306b\u3082\n<https://docs.google.com/presentation/d/1BA7V88nTK9CjnpFlARshRiW1dYJtprIljrnD9w9hnNc/edit#slide=id.g28cb9d6417a_0_9>",
+        "user": "U05SL6CB6DN",
+        "ts": "1697339072.578039",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "wCiR1",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "\u95a2\u9023\u30da\u30fc\u30b8\u306b\u3082\u66f8\u3044\u305f\u3051\u3069\u3053\u3063\u3061\u306b\u3082\n"
+                            },
+                            {
+                                "type": "link",
+                                "url": "https://docs.google.com/presentation/d/1BA7V88nTK9CjnpFlARshRiW1dYJtprIljrnD9w9hnNc/edit#slide=id.g28cb9d6417a_0_9"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "F060RNRKFJB",
+                "created": 1697337856,
+                "timestamp": 1697337856,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U05RZKPRMBN",
+                "user_team": "T05RX3HH4V9",
+                "editable": false,
+                "size": 45398,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": false,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https://files.slack.com/files-pri/T05RX3HH4V9-F060RNRKFJB/image.png",
+                "url_private_download": "https://files.slack.com/files-pri/T05RX3HH4V9-F060RNRKFJB/download/image.png",
+                "media_display_type": "unknown",
+                "thumb_64": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060RNRKFJB-a96a4c45c1/image_64.png",
+                "thumb_80": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060RNRKFJB-a96a4c45c1/image_80.png",
+                "thumb_360": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060RNRKFJB-a96a4c45c1/image_360.png",
+                "thumb_360_w": 360,
+                "thumb_360_h": 164,
+                "thumb_480": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060RNRKFJB-a96a4c45c1/image_480.png",
+                "thumb_480_w": 480,
+                "thumb_480_h": 219,
+                "thumb_160": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060RNRKFJB-a96a4c45c1/image_160.png",
+                "thumb_720": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060RNRKFJB-a96a4c45c1/image_720.png",
+                "thumb_720_w": 720,
+                "thumb_720_h": 328,
+                "thumb_800": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060RNRKFJB-a96a4c45c1/image_800.png",
+                "thumb_800_w": 800,
+                "thumb_800_h": 364,
+                "original_w": 911,
+                "original_h": 415,
+                "thumb_tiny": "AwAVADCtVuH/AFS/SqlW4v8AVL9KiexSLMP3T9arar/qE/3v6VZh+6frVbVf9Qn+9/SnHYTM+3/16fWr9ULf/Xp9av1aIZW7Vai/1S/Sqo6VZi/1S/Ss57GiLUP3D9arapzAn+//AEqxD9w/Wq+p/wCoT/f/AKU47CZQhH79PrV+qEP+uT61f7VaIZ//2Q==",
+                "permalink": "https://tmllab.slack.com/files/U05RZKPRMBN/F060RNRKFJB/image.png",
+                "permalink_public": "https://slack-files.com/T05RX3HH4V9-F060RNRKFJB-8c8b424eb3",
+                "is_starred": false,
+                "has_rich_preview": false,
+                "file_access": "visible"
+            }
+        ],
+        "upload": false,
+        "user": "U05RZKPRMBN",
+        "display_as_bot": false,
+        "ts": "1697337873.878069",
+        "client_msg_id": "971ecc77-456e-44a1-aec2-e58227a8246a"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "F061V8VGXFS",
+                "created": 1697337822,
+                "timestamp": 1697337822,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U05RZKPRMBN",
+                "user_team": "T05RX3HH4V9",
+                "editable": false,
+                "size": 39811,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": false,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https://files.slack.com/files-pri/T05RX3HH4V9-F061V8VGXFS/image.png",
+                "url_private_download": "https://files.slack.com/files-pri/T05RX3HH4V9-F061V8VGXFS/download/image.png",
+                "media_display_type": "unknown",
+                "thumb_64": "https://files.slack.com/files-tmb/T05RX3HH4V9-F061V8VGXFS-9d6522b5a1/image_64.png",
+                "thumb_80": "https://files.slack.com/files-tmb/T05RX3HH4V9-F061V8VGXFS-9d6522b5a1/image_80.png",
+                "thumb_360": "https://files.slack.com/files-tmb/T05RX3HH4V9-F061V8VGXFS-9d6522b5a1/image_360.png",
+                "thumb_360_w": 360,
+                "thumb_360_h": 203,
+                "thumb_480": "https://files.slack.com/files-tmb/T05RX3HH4V9-F061V8VGXFS-9d6522b5a1/image_480.png",
+                "thumb_480_w": 480,
+                "thumb_480_h": 271,
+                "thumb_160": "https://files.slack.com/files-tmb/T05RX3HH4V9-F061V8VGXFS-9d6522b5a1/image_160.png",
+                "thumb_720": "https://files.slack.com/files-tmb/T05RX3HH4V9-F061V8VGXFS-9d6522b5a1/image_720.png",
+                "thumb_720_w": 720,
+                "thumb_720_h": 406,
+                "thumb_800": "https://files.slack.com/files-tmb/T05RX3HH4V9-F061V8VGXFS-9d6522b5a1/image_800.png",
+                "thumb_800_w": 800,
+                "thumb_800_h": 451,
+                "original_w": 803,
+                "original_h": 453,
+                "thumb_tiny": "AwAbADC/Td+SMDrSucISTjjtTdyYXBPHIqRi7+M7TihnwcYNIWXdyenQUmVLd+uDx3o1AHlKY/dsc4HGOtOjfegbGPxpkhVkHLAjkEDpipEOUBzn3IxTEJKSI2K9ccVF+9w248BsZC9RViigCDdIGXI4wMjb3p7GQA4Vc44INSUUAQln64IB6cc1IhJQZ606igD/2Q==",
+                "permalink": "https://tmllab.slack.com/files/U05RZKPRMBN/F061V8VGXFS/image.png",
+                "permalink_public": "https://slack-files.com/T05RX3HH4V9-F061V8VGXFS-6932bec8c1",
+                "is_starred": false,
+                "has_rich_preview": false,
+                "file_access": "visible"
+            }
+        ],
+        "upload": false,
+        "user": "U05RZKPRMBN",
+        "display_as_bot": false,
+        "ts": "1697337824.705399",
+        "client_msg_id": "916f2ba0-8c2e-406d-b795-649df110040f"
+    },
+    {
+        "client_msg_id": "88cc0937-1d00-4f1d-85da-830a22a25ec7",
+        "type": "message",
+        "text": "<@U05SL6CB6DN> \u5165\u308c\u305f\uff1f",
+        "user": "U05RZKPRMBN",
+        "ts": "1697334946.779139",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "VDOae",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U05SL6CB6DN"
+                            },
+                            {
+                                "type": "text",
+                                "text": " \u5165\u308c\u305f\uff1f"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "daf9e3c0-4f8a-4661-aa0c-654133588eef",
+        "type": "message",
+        "text": "<https://rd.supporterz.jp/3KQoby9>",
+        "user": "U05RZKPRMBN",
+        "ts": "1697334682.622649",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "OocH8",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "https://rd.supporterz.jp/3KQoby9"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "from_url": "https://rd.supporterz.jp/3KQoby9",
+                "service_icon": "https://cartahd.zoom.us/zoom.ico",
+                "id": 1,
+                "original_url": "https://rd.supporterz.jp/3KQoby9",
+                "fallback": "Zoom Video: Join our Cloud HD Video Meeting",
+                "text": "Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zoom Rooms is the original software-based conference room solution used around the world in board, conference, huddle, and training rooms, as well as executive offices and classrooms. Founded in 2011, Zoom helps businesses and organizations bring their teams together in a frictionless environment to get more done. Zoom is a publicly traded company headquartered in San Jose, CA.",
+                "title": "Join our Cloud HD Video Meeting",
+                "title_link": "https://rd.supporterz.jp/3KQoby9",
+                "service_name": "Zoom Video"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "1F59F914-CB25-4A99-B5D0-CF6E7C2C71FC",
+        "type": "message",
+        "text": "zoom\u30ea\u30f3\u30af\u8cbc\u3063\u3068\u3044\u3066\u307b\u3057\u3044",
+        "user": "U05SL6CB6DN",
+        "ts": "1697334645.889809",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "QgMYm",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "zoom\u30ea\u30f3\u30af\u8cbc\u3063\u3068\u3044\u3066\u307b\u3057\u3044"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    }
+]

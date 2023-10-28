@@ -1,0 +1,322 @@
+[
+    {
+        "client_msg_id": "3f7684c6-db9c-4d30-9cae-8183e697e6f0",
+        "type": "message",
+        "text": "<https://github.com/TMLlaboratory/slack-message-finder/pull/44|PR> \u51fa\u3057\u307e\u3057\u305f\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059",
+        "user": "U05SL6CB6DN",
+        "ts": "1696706647.765899",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "9+z",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/44",
+                                "text": "PR"
+                            },
+                            {
+                                "type": "text",
+                                "text": " \u51fa\u3057\u307e\u3057\u305f\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "id": 1,
+                "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                "ts": 1696706607,
+                "color": "36a64f",
+                "bot_id": "B05V0KEQZUG",
+                "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/44",
+                "is_app_unfurl": true,
+                "app_id": "A01BP7R4KNY",
+                "fallback": "#44 recreate-db",
+                "text": "*\u5bfe\u5fdc Issue <https://github.com/TMLlaboratory/slack-message-finder/issues/41|#41>*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/41|#41>\n\n*\u6982\u8981*\n\nDB\u3092create\u3057\u76f4\u3057\u305f\n\n*\u5b9f\u88c5\u5185\u5bb9*\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2022 [ ]\n\u2022 [ ]\n\u2022 [ ]\n\n*\u5099\u8003*",
+                "title": "#44 recreate-db",
+                "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/44",
+                "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ],
+        "thread_ts": "1696706647.765899",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1696709953.912009",
+        "reply_users": [
+            "U05RX3M7P27"
+        ],
+        "is_locked": false,
+        "subscribed": false,
+        "reactions": [
+            {
+                "name": "eyes",
+                "users": [
+                    "U05RX3M7P27"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "573e4065-6020-4921-ad2b-e0869eb6541b",
+        "type": "message",
+        "text": "\u4e0a\u3068\u4e00\u7dd2\u306e\u5185\u5bb9\n```import logging\nimport os\nimport json  # json\u30e2\u30b8\u30e5\u30fc\u30eb\u3092\u30a4\u30f3\u30dd\u30fc\u30c8\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\nlogging.basicConfig(level=logging.DEBUG)\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n@app.event(\"message\")\ndef handle_message_events(body, logger):\n    formatted_body = json.dumps(body, indent=4)  # body\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3092\u6574\u5f62\n    <http://logger.info|logger.info>(formatted_body)  # \u6574\u5f62\u3055\u308c\u305fbody\u3092\u30ed\u30b0\u3068\u3057\u3066\u51fa\u529b\n    client = WebClient(token=os.environ[\"SLACK_BOT_TOKEN\"])\n    # \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304b\u3089ts\uff08\u30bf\u30a4\u30e0\u30b9\u30bf\u30f3\u30d7\uff09\u3092\u53d6\u5f97\n    ts = body[\"event\"][\"ts\"]\n    # conversations.history\u30a8\u30f3\u30c9\u30dd\u30a4\u30f3\u30c8\u3092\u4f7f\u7528\u3057\u3066\u30c1\u30e3\u30f3\u30cd\u30eb\u306e\u30e1\u30c3\u30bb\u30fc\u30b8\u5c65\u6b74\u3092\u53d6\u5f97\n    response = client.conversations_history(channel=os.environ[\"SLACK_CHANNEL_ID\"], latest=ts, inclusive=True, limit=1)\n    message = response[\"messages\"][0]\n    # client_msg_id\u3092\u53d6\u5f97\uff08\u5b58\u5728\u3059\u308b\u5834\u5408\uff09\n    client_msg_id = message.get(\"client_msg_id\", None)\n    # \u3053\u306e\u4f8b\u3067\u306f\u3001\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u30e1\u30c3\u30bb\u30fc\u30b8\u3068client_msg_id\u3092\u4fdd\u5b58\u3059\u308b\u51e6\u7406\u3092\u793a\u3057\u307e\u3059\uff08\u5b9f\u969b\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u64cd\u4f5c\u306f\u7701\u7565\uff09\n    # save_message_to_database(ts, client_msg_id, message[\"text\"])\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()```",
+        "user": "U05RZKPRMBN",
+        "ts": "1696656878.935029",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "hA1ck",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "\u4e0a\u3068\u4e00\u7dd2\u306e\u5185\u5bb9\n"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "rich_text_preformatted",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "import logging\nimport os\nimport json  # json\u30e2\u30b8\u30e5\u30fc\u30eb\u3092\u30a4\u30f3\u30dd\u30fc\u30c8\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\nlogging.basicConfig(level=logging.DEBUG)\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n@app.event(\"message\")\ndef handle_message_events(body, logger):\n    formatted_body = json.dumps(body, indent=4)  # body\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3092\u6574\u5f62\n    logger.info(formatted_body)  # \u6574\u5f62\u3055\u308c\u305fbody\u3092\u30ed\u30b0\u3068\u3057\u3066\u51fa\u529b\n    client = WebClient(token=os.environ[\"SLACK_BOT_TOKEN\"])\n    # \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304b\u3089ts\uff08\u30bf\u30a4\u30e0\u30b9\u30bf\u30f3\u30d7\uff09\u3092\u53d6\u5f97\n    ts = body[\"event\"][\"ts\"]\n    # conversations.history\u30a8\u30f3\u30c9\u30dd\u30a4\u30f3\u30c8\u3092\u4f7f\u7528\u3057\u3066\u30c1\u30e3\u30f3\u30cd\u30eb\u306e\u30e1\u30c3\u30bb\u30fc\u30b8\u5c65\u6b74\u3092\u53d6\u5f97\n    response = client.conversations_history(channel=os.environ[\"SLACK_CHANNEL_ID\"], latest=ts, inclusive=True, limit=1)\n    message = response[\"messages\"][0]\n    # client_msg_id\u3092\u53d6\u5f97\uff08\u5b58\u5728\u3059\u308b\u5834\u5408\uff09\n    client_msg_id = message.get(\"client_msg_id\", None)\n    # \u3053\u306e\u4f8b\u3067\u306f\u3001\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u30e1\u30c3\u30bb\u30fc\u30b8\u3068client_msg_id\u3092\u4fdd\u5b58\u3059\u308b\u51e6\u7406\u3092\u793a\u3057\u307e\u3059\uff08\u5b9f\u969b\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u64cd\u4f5c\u306f\u7701\u7565\uff09\n    # save_message_to_database(ts, client_msg_id, message[\"text\"])\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()"
+                            }
+                        ],
+                        "border": 0
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "a428728b-462a-4ddd-ae1a-b0e82052f79f",
+        "type": "message",
+        "text": "import logging\nimport os\nimport json  # json\u30e2\u30b8\u30e5\u30fc\u30eb\u3092\u30a4\u30f3\u30dd\u30fc\u30c8\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\n\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n@app.event(\"message\")\ndef handle_message_events(body, logger):\n    formatted_body = json.dumps(body, indent=4)  # body\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3092\u6574\u5f62\n    <http://logger.info|logger.info>(formatted_body)  # \u6574\u5f62\u3055\u308c\u305fbody\u3092\u30ed\u30b0\u3068\u3057\u3066\u51fa\u529b\n    client = WebClient(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n    # \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304b\u3089ts\uff08\u30bf\u30a4\u30e0\u30b9\u30bf\u30f3\u30d7\uff09\u3092\u53d6\u5f97\n    ts = body[\"event\"][\"ts\"]\n\n    # conversations.history\u30a8\u30f3\u30c9\u30dd\u30a4\u30f3\u30c8\u3092\u4f7f\u7528\u3057\u3066\u30c1\u30e3\u30f3\u30cd\u30eb\u306e\u30e1\u30c3\u30bb\u30fc\u30b8\u5c65\u6b74\u3092\u53d6\u5f97\n    response = client.conversations_history(channel=os.environ[\"SLACK_CHANNEL_ID\"], latest=ts, inclusive=True, limit=1)\n    message = response[\"messages\"][0]\n\n    # client_msg_id\u3092\u53d6\u5f97\uff08\u5b58\u5728\u3059\u308b\u5834\u5408\uff09\n    client_msg_id = message.get(\"client_msg_id\", None)\n\n    # \u3053\u306e\u4f8b\u3067\u306f\u3001\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u30e1\u30c3\u30bb\u30fc\u30b8\u3068client_msg_id\u3092\u4fdd\u5b58\u3059\u308b\u51e6\u7406\u3092\u793a\u3057\u307e\u3059\uff08\u5b9f\u969b\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u64cd\u4f5c\u306f\u7701\u7565\uff09\n    # save_message_to_database(ts, client_msg_id, message[\"text\"])\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()",
+        "user": "U05RX3M7P27",
+        "ts": "1696656432.040629",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "QEl",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "import logging\nimport os\nimport json  # json\u30e2\u30b8\u30e5\u30fc\u30eb\u3092\u30a4\u30f3\u30dd\u30fc\u30c8\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\n\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n@app.event(\"message\")\ndef handle_message_events(body, logger):\n    formatted_body = json.dumps(body, indent=4)  # body\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3092\u6574\u5f62\n    "
+                            },
+                            {
+                                "type": "link",
+                                "url": "http://logger.info",
+                                "text": "logger.info"
+                            },
+                            {
+                                "type": "text",
+                                "text": "(formatted_body)  # \u6574\u5f62\u3055\u308c\u305fbody\u3092\u30ed\u30b0\u3068\u3057\u3066\u51fa\u529b\n    client = WebClient(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n    # \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304b\u3089ts\uff08\u30bf\u30a4\u30e0\u30b9\u30bf\u30f3\u30d7\uff09\u3092\u53d6\u5f97\n    ts = body[\"event\"][\"ts\"]\n\n    # conversations.history\u30a8\u30f3\u30c9\u30dd\u30a4\u30f3\u30c8\u3092\u4f7f\u7528\u3057\u3066\u30c1\u30e3\u30f3\u30cd\u30eb\u306e\u30e1\u30c3\u30bb\u30fc\u30b8\u5c65\u6b74\u3092\u53d6\u5f97\n    response = client.conversations_history(channel=os.environ[\"SLACK_CHANNEL_ID\"], latest=ts, inclusive=True, limit=1)\n    message = response[\"messages\"][0]\n\n    # client_msg_id\u3092\u53d6\u5f97\uff08\u5b58\u5728\u3059\u308b\u5834\u5408\uff09\n    client_msg_id = message.get(\"client_msg_id\", None)\n\n    # \u3053\u306e\u4f8b\u3067\u306f\u3001\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u30e1\u30c3\u30bb\u30fc\u30b8\u3068client_msg_id\u3092\u4fdd\u5b58\u3059\u308b\u51e6\u7406\u3092\u793a\u3057\u307e\u3059\uff08\u5b9f\u969b\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u64cd\u4f5c\u306f\u7701\u7565\uff09\n    # save_message_to_database(ts, client_msg_id, message[\"text\"])\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "79bab3a7-fe51-41d2-8537-1840ab8997c2",
+        "type": "message",
+        "text": "<https://topaz-punishment-9b3.notion.site/TMLlab-bot-token-156fe707edcd4041908f9f516dc4abc6?pvs=4>",
+        "user": "U05RZKPRMBN",
+        "ts": "1696655039.712109",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "8kQ",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "https://topaz-punishment-9b3.notion.site/TMLlab-bot-token-156fe707edcd4041908f9f516dc4abc6?pvs=4"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "from_url": "https://topaz-punishment-9b3.notion.site/TMLlab-bot-token-156fe707edcd4041908f9f516dc4abc6?pvs=4",
+                "service_icon": "https://topaz-punishment-9b3.notion.site/images/favicon.ico",
+                "id": 1,
+                "original_url": "https://topaz-punishment-9b3.notion.site/TMLlab-bot-token-156fe707edcd4041908f9f516dc4abc6?pvs=4",
+                "fallback": "Yosuke's Notion on Notion: TMLlab bot token",
+                "text": "Slack API \u30a2\u30d7\u30ea\u3092\u4f5c\u6210\uff0c\u6a29\u9650\u4ed8\u4e0e\uff0c\u30a2\u30d7\u30ea\u3092\u30ef\u30fc\u30af\u30b9\u30da\u30fc\u30b9\u306b\u8ffd\u52a0\u307e\u3067",
+                "title": "TMLlab bot token",
+                "title_link": "https://topaz-punishment-9b3.notion.site/TMLlab-bot-token-156fe707edcd4041908f9f516dc4abc6?pvs=4",
+                "service_name": "Yosuke's Notion on Notion"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "2be1f154-c27e-4612-99ca-e91e5f73825f",
+        "type": "message",
+        "text": "```import logging\nimport os\nimport json\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\n\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n\n\n@app.event(\"message\")\ndef handle_all_message_events(body, logger):\n    logging.debug(json.dumps(body, indent=4))\n\n\n@app.message(\"hello\")\ndef handle_message_hello_events(message, say):\n    say(f\"\u3053\u3093\u306b\u3061\u306f &lt;@{message['user']}&gt; \u3055\u3093\uff01\")\n    logging.debug(\"\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\\n\\n\\n\\n\\n\\n\\n\")\n\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()```",
+        "user": "U05RZKPRMBN",
+        "ts": "1696654746.985789",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "f+a",
+                "elements": [
+                    {
+                        "type": "rich_text_preformatted",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "import logging\nimport os\nimport json\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\n\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n\n\n@app.event(\"message\")\ndef handle_all_message_events(body, logger):\n    logging.debug(json.dumps(body, indent=4))\n\n\n@app.message(\"hello\")\ndef handle_message_hello_events(message, say):\n    say(f\"\u3053\u3093\u306b\u3061\u306f <@{message['user']}> \u3055\u3093\uff01\")\n    logging.debug(\"\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\\n\\n\\n\\n\\n\\n\\n\")\n\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()"
+                            }
+                        ],
+                        "border": 0
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "36ef6a96-e241-4615-8b3a-d41c34c2f010",
+        "type": "message",
+        "text": "<https://www.notion.so/TMLlab-bot-token-156fe707edcd4041908f9f516dc4abc6?pvs=4>",
+        "user": "U05RZKPRMBN",
+        "ts": "1696654691.129019",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "6=o8",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "https://www.notion.so/TMLlab-bot-token-156fe707edcd4041908f9f516dc4abc6?pvs=4"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "8f187347-05bc-415a-8832-d922e491366b",
+        "type": "message",
+        "text": "<!channel>",
+        "user": "U05SL6CB6DN",
+        "ts": "1696638092.708899",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "rtV",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "broadcast",
+                                "range": "channel"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "502b1f08-cca2-4097-88f5-639d0174ab2d",
+        "type": "message",
+        "text": "<https://github.com/TMLlaboratory/slack-message-finder/pull/42|PR> \u51fa\u3057\u307e\u3057\u305f\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059",
+        "user": "U05SL6CB6DN",
+        "ts": "1696638083.451209",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "sEfo",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/42",
+                                "text": "PR"
+                            },
+                            {
+                                "type": "text",
+                                "text": " \u51fa\u3057\u307e\u3057\u305f\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "id": 1,
+                "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                "ts": 1696638022,
+                "color": "36a64f",
+                "bot_id": "B05V0KEQZUG",
+                "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/42",
+                "is_app_unfurl": true,
+                "app_id": "A01BP7R4KNY",
+                "fallback": "#42 edit-db",
+                "text": "*\u5bfe\u5fdc Issue <https://github.com/TMLlaboratory/slack-message-finder/issues/41|#41>*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/41|#41>\n\n*\u6982\u8981*\n\nchannel\u304b\u3089user_id\u3092\u524a\u9664  \nchannel\u306bcreator, is_private, num_members\u3092\u8ffd\u52a0  \nmessage\u306bchannel_id\u3092\u8ffd\u52a0\n\n*\u5b9f\u88c5\u5185\u5bb9*\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2610 task build\u3092\u3057\u3066DB\u304c\u7de8\u96c6\u3055\u308c\u3066\u3044\u308b\u304b\u78ba\u8a8d\n\n*\u5099\u8003*",
+                "title": "#42 edit-db",
+                "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/42",
+                "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ],
+        "thread_ts": "1696638083.451209",
+        "reply_count": 4,
+        "reply_users_count": 2,
+        "latest_reply": "1696639378.659239",
+        "reply_users": [
+            "U05RX3M7P27",
+            "U05SL6CB6DN"
+        ],
+        "is_locked": false,
+        "subscribed": false,
+        "reactions": [
+            {
+                "name": "eyes",
+                "users": [
+                    "U05RX3M7P27"
+                ],
+                "count": 1
+            }
+        ]
+    }
+]

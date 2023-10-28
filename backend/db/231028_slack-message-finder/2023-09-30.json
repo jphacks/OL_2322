@@ -1,0 +1,379 @@
+[
+    {
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "text": "\u30de\u30fc\u30b8\u3057\u307e\u3057\u305f",
+        "user": "U05RZKPRMBN",
+        "ts": "1696100857.447469",
+        "thread_ts": "1696100243.734449",
+        "root": {
+            "client_msg_id": "c524c3fd-a6c6-4a64-8448-0cba54a2c53e",
+            "type": "message",
+            "text": "<!channel>\n<https://github.com/TMLlaboratory/slack-message-finder/pull/26|PR> \u51fa\u3057\u307e\u3057\u305f\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059",
+            "user": "U05SL6CB6DN",
+            "ts": "1696100243.734449",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "o/bQq",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "broadcast",
+                                    "range": "channel"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/26",
+                                    "text": "PR"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " \u51fa\u3057\u307e\u3057\u305f\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "T05RX3HH4V9",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1696100195,
+                    "color": "36a64f",
+                    "bot_id": "B05V0KEQZUG",
+                    "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/26",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#26 [feat] create db",
+                    "text": "*\u5bfe\u5fdc Issue <https://github.com/TMLlaboratory/slack-message-finder/issues/24|#24>*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/24|#24>\n\n*\u6982\u8981*\n\nDB\u306e\u69cb\u7bc9\n\n*\u5b9f\u88c5\u5185\u5bb9*\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2022 docker compose down -v\n\u2022 task build\n\u2610 DB\u304c\u69cb\u7bc9\u3055\u308c\u3066\u3044\u308b\u304b\u78ba\u8a8d\n\n*\u5099\u8003*",
+                    "title": "#26 [feat] create db",
+                    "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/26",
+                    "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "thread_ts": "1696100243.734449",
+            "reply_count": 1,
+            "reply_users_count": 1,
+            "latest_reply": "1696100857.447469",
+            "reply_users": [
+                "U05RZKPRMBN"
+            ],
+            "is_locked": false,
+            "subscribed": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "=y5Q6",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "\u30de\u30fc\u30b8\u3057\u307e\u3057\u305f"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "client_msg_id": "9aefb0fc-378a-45d1-84ab-0c54451fcf7b"
+    },
+    {
+        "client_msg_id": "c524c3fd-a6c6-4a64-8448-0cba54a2c53e",
+        "type": "message",
+        "text": "<!channel>\n<https://github.com/TMLlaboratory/slack-message-finder/pull/26|PR> \u51fa\u3057\u307e\u3057\u305f\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059",
+        "user": "U05SL6CB6DN",
+        "ts": "1696100243.734449",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "o/bQq",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "broadcast",
+                                "range": "channel"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "type": "link",
+                                "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/26",
+                                "text": "PR"
+                            },
+                            {
+                                "type": "text",
+                                "text": " \u51fa\u3057\u307e\u3057\u305f\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "id": 1,
+                "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                "ts": 1696100195,
+                "color": "36a64f",
+                "bot_id": "B05V0KEQZUG",
+                "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/26",
+                "is_app_unfurl": true,
+                "app_id": "A01BP7R4KNY",
+                "fallback": "#26 [feat] create db",
+                "text": "*\u5bfe\u5fdc Issue <https://github.com/TMLlaboratory/slack-message-finder/issues/24|#24>*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/24|#24>\n\n*\u6982\u8981*\n\nDB\u306e\u69cb\u7bc9\n\n*\u5b9f\u88c5\u5185\u5bb9*\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2022 docker compose down -v\n\u2022 task build\n\u2610 DB\u304c\u69cb\u7bc9\u3055\u308c\u3066\u3044\u308b\u304b\u78ba\u8a8d\n\n*\u5099\u8003*",
+                "title": "#26 [feat] create db",
+                "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/26",
+                "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ],
+        "thread_ts": "1696100243.734449",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1696100857.447469",
+        "reply_users": [
+            "U05RZKPRMBN"
+        ],
+        "is_locked": false,
+        "subscribed": false
+    },
+    {
+        "client_msg_id": "28fff98f-3cda-403a-9172-a34a553c7a3d",
+        "type": "message",
+        "text": "<!channel>\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059\n<https://github.com/TMLlaboratory/slack-message-finder/pull/25>",
+        "user": "U05RX3M7P27",
+        "ts": "1696098450.096519",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "qtRq",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "broadcast",
+                                "range": "channel"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059\n"
+                            },
+                            {
+                                "type": "link",
+                                "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/25"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "id": 1,
+                "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                "ts": 1696098428,
+                "color": "36a64f",
+                "bot_id": "B05V0KEQZUG",
+                "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/25",
+                "is_app_unfurl": true,
+                "app_id": "A01BP7R4KNY",
+                "fallback": "#25 [fix]postgre\u3078\u306e\u79fb\u884c",
+                "text": "*\u5bfe\u5fdc Issue22*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/22|#22>\n\n*\u6982\u8981*\n\n\u2022 rails\u304b\u3089DB\u306b\u66f8\u304d\u8fbc\u3080\u305f\u3081\u306edatabase.yml\u3092\u66f8\u304d\u63db\u3048\u308b\n\u2022 \u305d\u308c\u306b\u4f34\u3044Gemfile\u3082\u66f8\u304d\u63db\u3048\u308b\n\u2022 \u73fe\u5728\u306edatabase.yml\u306fmysql\u3088\u3046\u306a\u306e\u3067\u3001postgresql\u3088\u3046\u306b\u66f8\u304d\u63db\u3048\u308b\n\u2022 Gemfile\u3082\u66f8\u304d\u63db\u3048\u308b\n\n*\u5b9f\u88c5\u5185\u5bb9*\n\n\u2022 database.yml\n\u2022 Gemfile\n\u2022 \u4e0a\u8a18\u66f8\u304d\u63db\u3048\u308b\n\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2022 build\u304c\u6210\u529f\u3059\u308b\n\u2022 DB\u3092\u4f5c\u6210\u3067\u304d\u308b\uff08docker-compose run api rails db:create\uff09\n\u2022 \u30de\u30a4\u30b0\u30ec\u30fc\u30b7\u30e7\u30f3\u304c\u3067\u304d\u308b\uff08docker-compose run api rails db:migrate\uff09\n\n*\u5099\u8003*",
+                "title": "#25 [fix]postgre\u3078\u306e\u79fb\u884c",
+                "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/25",
+                "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "05936f0a-c4ee-4308-9d39-69d4ac0fd7fa",
+        "type": "message",
+        "text": "# PostgreSQL. Versions 9.3 and up are supported.\n#\n# Install the pg driver:\n#   gem install pg\n# Ensure the PG gem is defined in your Gemfile\n#   gem 'pg'\n#\ndefault: &amp;default\n  adapter: postgresql\n  encoding: unicode\n  pool: &lt;%= ENV.fetch(\"RAILS_MAX_THREADS\") { 5 } %&gt;\n  username: user\n  password: password\n  host: db\n\ndevelopment:\n  &lt;&lt;: *default\n  database: mydatabase_development\n\ntest:\n  &lt;&lt;: *default\n  database: mydatabase_test\n\nproduction:\n  &lt;&lt;: *default\n  database: mydatabase_production\n  username: user\n  password: &lt;%= ENV['BACKEND_DATABASE_PASSWORD'] %&gt;",
+        "user": "U05RX3M7P27",
+        "ts": "1696097116.043389",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "wGM",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "# PostgreSQL. Versions 9.3 and up are supported.\n#\n# Install the pg driver:\n#   gem install pg\n# Ensure the PG gem is defined in your Gemfile\n#   gem 'pg'\n#\ndefault: &default\n  adapter: postgresql\n  encoding: unicode\n  pool: <%= ENV.fetch(\"RAILS_MAX_THREADS\") { 5 } %>\n  username: user\n  password: password\n  host: db\n\ndevelopment:\n  <<: *default\n  database: mydatabase_development\n\ntest:\n  <<: *default\n  database: mydatabase_test\n\nproduction:\n  <<: *default\n  database: mydatabase_production\n  username: user\n  password: <%= ENV['BACKEND_DATABASE_PASSWORD'] %>"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "acba3f17-d0ef-425a-b0ce-b8c2eaa1328e",
+        "type": "message",
+        "text": "<!channel>\n\u5148\u306b18\u306e\u30b5\u30a4\u30c9\u30d0\u30fc\u3092\u30de\u30fc\u30b8\u3057\u3066\u304b\u3089\u78ba\u8a8d\u3057\u3066\u3082\u3089\u3048\u308b\u3068\u52a9\u304b\u308a\u307e\u3059\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059\n<https://github.com/TMLlaboratory/slack-message-finder/pull/20>",
+        "user": "U05RX3M7P27",
+        "ts": "1696082361.637079",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Oam",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "broadcast",
+                                "range": "channel"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n\u5148\u306b18\u306e\u30b5\u30a4\u30c9\u30d0\u30fc\u3092\u30de\u30fc\u30b8\u3057\u3066\u304b\u3089\u78ba\u8a8d\u3057\u3066\u3082\u3089\u3048\u308b\u3068\u52a9\u304b\u308a\u307e\u3059\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059\n"
+                            },
+                            {
+                                "type": "link",
+                                "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/20"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "id": 1,
+                "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                "ts": 1696082139,
+                "color": "36a64f",
+                "bot_id": "B05V0KEQZUG",
+                "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/20",
+                "is_app_unfurl": true,
+                "app_id": "A01BP7R4KNY",
+                "fallback": "#20 [fix]mysql\u304b\u3089postgresql",
+                "text": "*\u5bfe\u5fdc Issue19*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/19|#19>\n\n*\u6982\u8981*\n\n\u4f7f\u7528\u3059\u308bDB\u306e\u5909\u66f4  \nmysql\u304b\u3089postgresql\n\n*\u5b9f\u88c5\u5185\u5bb9*\n\ndocker-compose.yml\u306e\u5909\u66f4\n\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2022 \u304d\u3061\u3093\u3068\u8d77\u52d5\u3057\u3066\u3001\u554f\u984c\u306a\u304fDB\u3068\u3057\u3066\u6a5f\u80fd\u3059\u308b\u304b\u3069\u3046\u304b\n\n*\u5099\u8003*",
+                "title": "#20 [fix]mysql\u304b\u3089postgresql",
+                "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/20",
+                "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "25ba6c97-ff01-4335-beae-18a565bd713a",
+        "type": "message",
+        "text": "<!channel>\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059\n<https://github.com/TMLlaboratory/slack-message-finder/pull/18>",
+        "user": "U05RX3M7P27",
+        "ts": "1696069246.010469",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "VpY",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "broadcast",
+                                "range": "channel"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059\n"
+                            },
+                            {
+                                "type": "link",
+                                "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/18"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "image_url": "https://user-images.githubusercontent.com/131850959/271767400-f7cfb104-b2d7-4cc5-b221-305716f37fbf.png",
+                "image_width": 1081,
+                "image_height": 767,
+                "image_bytes": 27072,
+                "id": 1,
+                "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                "ts": 1696069207,
+                "color": "36a64f",
+                "bot_id": "B05V0KEQZUG",
+                "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/18",
+                "is_app_unfurl": true,
+                "app_id": "A01BP7R4KNY",
+                "fallback": "1081x767px image",
+                "text": "*\u5bfe\u5fdc Issue17*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/17|#17>\n\n*\u6982\u8981*\n\n\u2022 \u30e1\u30a4\u30f3\u30da\u30fc\u30b8\u306e\u30b5\u30a4\u30c9\u30d0\u30fc\u3092\u958b\u767a\u3057\u305f\n\u2022 \u5fc5\u8981\u306asvg\u30d5\u30a1\u30a4\u30eb\u3092\u4f5c\u6210\u3057\u305f\n\u2022 \u30c7\u30b6\u30a4\u30f3\u306f\u4ee5\u4e0b\u3092\u53c2\u8003\u306b\u3057\u305f\n\u2022 <https://www.figma.com/file/1yTRTCUAk3p81gnR6ZpM5v/Untitled?type=design&node-id=1-54&mode=design&t=sbs36MJqciNRGQm0-0|https://www.figma.com/file/1yTRTCUAk3p81gnR6ZpM5v/Untitled?type=design&node-id=1-54&mode=design&t=sbs36MJqciNRGQm0-0>\n\n*\u5b9f\u88c5\u5185\u5bb9*\n\n\u2022 frontend/app/src/components/common/SideBar/index.tsx\n\u2022 frontend/app/src/components/common/SideBar/SideBar.tsx\n\u2022 frontend/app/src/components/common/SideBar/SideBar.module.css\n\u2022 \u4e0a\u8a183\u3064\u3092\u7de8\u96c6\u3057\u3066\u958b\u767a\u3059\u308b\n\u2022 public\u306bfigma\u304b\u3089\u53d6\u3063\u3066\u304d\u305f\u5fc5\u8981\u306a\u753b\u50cf\u3092\u633f\u5165\u3057\u305f\n\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n\n\u2022 <http://localhost:8000/|http://localhost:8000/>  \n    <https://user-images.githubusercontent.com/131850959/271767400-f7cfb104-b2d7-4cc5-b221-305716f37fbf.png|\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8 2023-09-30 19 13 01>\n\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2022 \u753b\u9762\u306e\u6bd4\u7387\u306a\u3069\u3092\u5909\u3048\u305f\u6642\u306b\u30c7\u30b6\u30a4\u30f3\u304c\u5d29\u308c\u306a\u3044\u304b\n\u2022 \u30d7\u30eb\u30c0\u30a6\u30f3\u30e1\u30cb\u30e5\u30fc\u306e\u30dc\u30bf\u30f3\u3082\u3042\u308b\u304c\u3001\u5fc5\u8981\u304b\u3069\u3046\u304b\u306e\u5224\u5b9a\n\u2022 \u30b3\u30fc\u30c9\u304c\u4e0a\u624b\u304f\u66f8\u3051\u3066\u3044\u308b\u304b\n\n*\u5099\u8003*\n\n\u2022 \u30d7\u30eb\u30c0\u30a6\u30f3\u30e1\u30cb\u30e5\u30fc\u306eTMLlab\u306f\u3044\u3089\u306a\u3044\u304b\u3082\u3057\u308c\u306a\u3044\n\u2022 \u3064\u3051\u305f\u3089\u3069\u3093\u306a\u611f\u3058\u304b\u3092\u898b\u305f\u304f\u3066\u3064\u3051\u305f",
+                "title": "#18 [feat]\u30b5\u30a4\u30c9\u30d0\u30fc\u306e\u958b\u767a",
+                "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/18",
+                "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "dcbdf426-67ca-44c7-9f87-a69583868296",
+        "type": "message",
+        "text": "<!channel>\n\u3084\u3063\u3071\u3086\u3063\u304f\u308a\u5bdd\u307e\u3057\u3087\u3046",
+        "user": "U05RX3M7P27",
+        "ts": "1696045806.428519",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "h0j3p",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "broadcast",
+                                "range": "channel"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n\u3084\u3063\u3071\u3086\u3063\u304f\u308a\u5bdd\u307e\u3057\u3087\u3046"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    }
+]

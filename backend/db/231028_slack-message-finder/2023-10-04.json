@@ -1,0 +1,54 @@
+[
+    {
+        "client_msg_id": "2911745d-baf6-4901-9c0b-f774b9a641c5",
+        "type": "message",
+        "text": "<mailto:yosukeiida1006@icloud.com|yosukeiida1006@icloud.com>",
+        "user": "U05RZKPRMBN",
+        "ts": "1696399064.030249",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "694h",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "mailto:yosukeiida1006@icloud.com",
+                                "text": "yosukeiida1006@icloud.com"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "eeea1411-631f-44eb-8458-ac75b3157300",
+        "type": "message",
+        "text": "<mailto:takumi0616.mrt@gmail.com|takumi0616.mrt@gmail.com>",
+        "user": "U05RX3M7P27",
+        "ts": "1696398748.864489",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "oQxD",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "mailto:takumi0616.mrt@gmail.com",
+                                "text": "takumi0616.mrt@gmail.com"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    }
+]
