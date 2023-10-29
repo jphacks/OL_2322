@@ -1,0 +1,106 @@
+.headerContent {
+    background-color: #3f3e3e;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.img1 {
+    width: 12px;
+    height: 15px;
+}
+
+.img2 {
+    height: 32px;
+    background-color: #3f3e3e;
+}
+
+.flexContainer {
+    display: flex;
+    align-items: center;
+}
+
+.titleContainer {
+    margin-left: 3%;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    color: #ffffff;
+}
+
+.searchInputContainer {
+    position: relative;
+    width: 50%;
+    margin-left: 5%;
+}
+
+.inputContainer {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.inputContainer img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #666666;
+    border-radius: 0.5rem;
+    background-color: #666666;
+    z-index: 1;
+    color: #ffffff;
+}
+
+.searchInput::placeholder {
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.searchInput [type="text"] {
+    color: #ffffff;
+}
+
+.buttonContainer {
+    margin-left: 20px;
+}
+
+.graphbuttonContainer {
+    background-color: #3f3e3e;
+    border: 0;
+    margin-left: 13%;
+}
+
+.GraphButton{
+    margin-top: 5px;
+    background-color: #3f3e3e;
+    border: 0;
+}
+
+.helpButton {
+    padding: 0.5rem;
+    border: 2px solid #e2e8f0;
+    background-color: #3f3e3e;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s;
+}
+
+.helpButton:active {
+    transform: scale(0.9);
+}

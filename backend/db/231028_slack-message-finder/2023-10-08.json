@@ -1,0 +1,224 @@
+[
+    {
+        "client_msg_id": "b49a8117-97c4-4f24-a6e9-ee7cbfaf54a6",
+        "type": "message",
+        "text": "```import logging\nimport os\nimport json\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\n\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n\n\n@app.event(\"message\")\ndef handle_all_message_events(body: dict, client, logger, response):\n    logging.debug(\"This is body\" + json.dumps(body, indent=4))\n\n    logging.debug(\"\\n\\n\\n extraction\")\n\n    type = body.get(\"event\", {}).get(\"type\", None)\n    user = body.get(\"event\", {}).get(\"user\", None)\n    channel = body.get(\"event\", {}).get(\"channel\", None)\n    ts = body.get(\"event\", {}).get(\"ts\")\n    thread_ts = body.get(\"event\", {}).get(\"thread_ts\", None)\n    text = (\n        body.get(\"event\", {})\n        .get(\"blocks\", [])[0]\n        .get(\"elements\", [])[0]\n        .get(\"elements\", [])[0]\n        .get(\"text\", None)\n    )\n    url = body.get(\"\")\n    image_name = body.get(\"event\", {}).get(\"files\", {}).get(\"name\", None)\n    image_url = body.get(\"event\", {}).get(\"files\", {}).get(\"url_private\", None)\n    is_bot = body.get(\"authorizations\", {})[0].get(\"is_bot\", None)\n\n    logging.debug(\"user: \" + user)\n    logging.debug(\"channel: \" + channel)\n    logging.debug(\"ts: \" + ts)\n    logging.debug(\"thread_ts: \" + str(thread_ts))\n    logging.debug(\"text: \" + text)\n\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()```",
+        "user": "U05RZKPRMBN",
+        "ts": "1696789339.497679",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "6YH",
+                "elements": [
+                    {
+                        "type": "rich_text_preformatted",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "import logging\nimport os\nimport json\nfrom slack_sdk import WebClient\nfrom slack_bolt import App\nfrom slack_bolt.adapter.socket_mode import SocketModeHandler\n\nlogging.basicConfig(level=logging.DEBUG)\n\napp = App(token=os.environ[\"SLACK_BOT_TOKEN\"])\n\n# \u30e1\u30c3\u30bb\u30fc\u30b8\u30a4\u30d9\u30f3\u30c8\u304c\u3042\u3063\u305f\u6642\u306b\u767a\u706b\n\n\n@app.event(\"message\")\ndef handle_all_message_events(body: dict, client, logger, response):\n    logging.debug(\"This is body\" + json.dumps(body, indent=4))\n\n    logging.debug(\"\\n\\n\\n extraction\")\n\n    type = body.get(\"event\", {}).get(\"type\", None)\n    user = body.get(\"event\", {}).get(\"user\", None)\n    channel = body.get(\"event\", {}).get(\"channel\", None)\n    ts = body.get(\"event\", {}).get(\"ts\")\n    thread_ts = body.get(\"event\", {}).get(\"thread_ts\", None)\n    text = (\n        body.get(\"event\", {})\n        .get(\"blocks\", [])[0]\n        .get(\"elements\", [])[0]\n        .get(\"elements\", [])[0]\n        .get(\"text\", None)\n    )\n    url = body.get(\"\")\n    image_name = body.get(\"event\", {}).get(\"files\", {}).get(\"name\", None)\n    image_url = body.get(\"event\", {}).get(\"files\", {}).get(\"url_private\", None)\n    is_bot = body.get(\"authorizations\", {})[0].get(\"is_bot\", None)\n\n    logging.debug(\"user: \" + user)\n    logging.debug(\"channel: \" + channel)\n    logging.debug(\"ts: \" + ts)\n    logging.debug(\"thread_ts: \" + str(thread_ts))\n    logging.debug(\"text: \" + text)\n\n\nif __name__ == \"__main__\":\n    handler = SocketModeHandler(app, os.environ[\"SLACK_APP_TOKEN\"])\n    handler.start()"
+                            }
+                        ],
+                        "border": 0
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9"
+    },
+    {
+        "client_msg_id": "30063e23-e965-4c64-a1a0-63c855fdfb7c",
+        "type": "message",
+        "text": "<!channel>\n<https://github.com/TMLlaboratory/slack-message-finder/pull/46|PR> \u51fa\u3057\u307e\u3057\u305f\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059",
+        "user": "U05SL6CB6DN",
+        "ts": "1696787402.133049",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "BkzxR",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "broadcast",
+                                "range": "channel"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "type": "link",
+                                "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/46",
+                                "text": "PR"
+                            },
+                            {
+                                "type": "text",
+                                "text": " \u51fa\u3057\u307e\u3057\u305f\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "id": 1,
+                "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                "ts": 1696787367,
+                "color": "36a64f",
+                "bot_id": "B05V0KEQZUG",
+                "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/46",
+                "is_app_unfurl": true,
+                "app_id": "A01BP7R4KNY",
+                "fallback": "#46 [feat] python-postgresql-connect",
+                "text": "*\u5bfe\u5fdc Issue <https://github.com/TMLlaboratory/slack-message-finder/issues/45|#45>*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/45|#45>\n\n*\u6982\u8981*\n\npython\u3068postgresql\u3092\u63a5\u7d9a\u3057\u305f  \n\u63a5\u7d9a\u306b\u4f34\u3046\u30c6\u30fc\u30d6\u30eb\u306e\u30ab\u30e9\u30e0\u540d\u306e\u5909\u66f4\n\n*\u5b9f\u88c5\u5185\u5bb9*\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2610 DB\u306e\u524a\u9664\u3057\uff0c\u518d\u5ea6task build\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u308b\n\u2610 slack\u3067message\u3092\u9001\u4fe1\u3057\u305f\u3089\uff0c\u30bf\u30fc\u30df\u30ca\u30eb\u4e0a\u306b\"\u30c7\u30fc\u30bf\u306e\u633f\u5165\u306b\u6210\u529f\u3057\u307e\u3057\u305f\"\u3068\u8868\u793a\u3055\u308c\u308b\u3053\u3068\u3092\u78ba\u8a8d\n\u2610 DB\u306emessages\u306b\u30c7\u30fc\u30bf\u304c\u633f\u5165\u3055\u308c\u3066\u3044\u308b\u3053\u3068\u3092\u78ba\u8a8d\n\n*\u5099\u8003*",
+                "title": "#46 [feat] python-postgresql-connect",
+                "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/46",
+                "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "text": "<https://files.slack.com/files-pri/T05RX3HH4V9-F0607JK8AJE/img_7801.jpg>",
+        "upload": false,
+        "user": "U05RZKPRMBN",
+        "ts": "1696780503.408049",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "vGASr",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "https://files.slack.com/files-pri/T05RX3HH4V9-F0607JK8AJE/img_7801.jpg"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "edited": {
+            "user": "U05RZKPRMBN",
+            "ts": "1696780731.000000"
+        },
+        "client_msg_id": "d088a2b8-0681-4505-b278-19287c5457b1"
+    },
+    {
+        "type": "message",
+        "text": "<https://files.slack.com/files-tmb/T05RX3HH4V9-F0607JK8AJE-3079f21283/img_7801_1024.jpg>",
+        "upload": false,
+        "user": "U05RZKPRMBN",
+        "ts": "1696779813.730749",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "YHZqY",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "https://files.slack.com/files-tmb/T05RX3HH4V9-F0607JK8AJE-3079f21283/img_7801_1024.jpg"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "edited": {
+            "user": "U05RZKPRMBN",
+            "ts": "1696780733.000000"
+        },
+        "client_msg_id": "12971b2f-4cd5-444e-bfe5-83ae4187ea37"
+    },
+    {
+        "type": "message",
+        "text": "<@U05RX3M7P27>\n<https://files.slack.com/files-pri/T05RX3HH4V9-F060WK3R6BA/image.png>",
+        "files": [
+            {
+                "id": "F060WK3R6BA",
+                "created": 1696749930,
+                "timestamp": 1696749930,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U05SL6CB6DN",
+                "user_team": "T05RX3HH4V9",
+                "editable": false,
+                "size": 125257,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https://files.slack.com/files-pri/T05RX3HH4V9-F060WK3R6BA/image.png",
+                "url_private_download": "https://files.slack.com/files-pri/T05RX3HH4V9-F060WK3R6BA/download/image.png",
+                "media_display_type": "unknown",
+                "thumb_64": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060WK3R6BA-c79d4f0af4/image_64.png",
+                "thumb_80": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060WK3R6BA-c79d4f0af4/image_80.png",
+                "thumb_360": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060WK3R6BA-c79d4f0af4/image_360.png",
+                "thumb_360_w": 360,
+                "thumb_360_h": 253,
+                "thumb_480": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060WK3R6BA-c79d4f0af4/image_480.png",
+                "thumb_480_w": 480,
+                "thumb_480_h": 338,
+                "thumb_160": "https://files.slack.com/files-tmb/T05RX3HH4V9-F060WK3R6BA-c79d4f0af4/image_160.png",
+                "original_w": 640,
+                "original_h": 450,
+                "thumb_tiny": "AwAhADC0I5i5beNp6AipI14+YhufSnr9wfSmowboelIYKm0c4PviobhzEq7QOT3GanX7vDbhUNxJJGF2DJJ74poVxQc8lWP+6BilcbVLDcMeoFMnfYPkGHOOT0ogfzEYOAWXPzA8UD1JgTgDjGKitXV1YquADUg6D0x6Uy1bcjcAYOOKQEq7dvyYx7VFPMYVHAOTjmnTZELFAQccY4pEQvCm8nPuKYDLuF5AHjbDDsO9NtYZEjLSsc4ICntU0m5cYkbJ+lKGHlkFsnmgBj/eb600U5/vN9aaKk0QpooNFAxD1pU/1g+tIetKn+sH1oEz/9k=",
+                "permalink": "https://tmllab.slack.com/files/U05SL6CB6DN/F060WK3R6BA/image.png",
+                "permalink_public": "https://slack-files.com/T05RX3HH4V9-F060WK3R6BA-d968a5b5bb",
+                "is_starred": false,
+                "has_rich_preview": false,
+                "file_access": "visible"
+            }
+        ],
+        "upload": false,
+        "user": "U05SL6CB6DN",
+        "display_as_bot": false,
+        "x_files": [
+            "F060WK3R6BA"
+        ],
+        "ts": "1696749982.487869",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "bV8N",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U05RX3M7P27"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "type": "link",
+                                "url": "https://files.slack.com/files-pri/T05RX3HH4V9-F060WK3R6BA/image.png"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "client_msg_id": "67a2eef8-0e6d-4d3f-853b-eb66c034bbc6"
+    }
+]

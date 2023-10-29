@@ -1,0 +1,6 @@
+user_id,email,image,real_name,display_name,is_admin,is_owner,is_primary_owner,is_restricted,is_ultra_restricted,is_bot,is_app_user
+U05RX3M7P27,s233319@stn.nagaokaut.ac.jp,https://secure.gravatar.com/avatar/a5dab8812fbe1deec5209b10a9aa6859.jpg?s=512&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0012-512.png,タカスカ　タクミ,タカスカ　タクミ,true,false,false,false,false,false,false
+U05RZKPRMBN,s233305@stn.nagaokaut.ac.jp,https://secure.gravatar.com/avatar/64df7e2baa964540772a2bd5fe91f57f.jpg?s=512&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0025-512.png,飯田　勇介,飯田　勇介,true,false,false,false,false,false,false
+U05SL6CB6DN,s233331@stn.nagaokaut.ac.jp,https://secure.gravatar.com/avatar/3190409d25b1150ee3e379fcb3b1cd50.jpg?s=512&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0007-512.png,若月勇紀,若月勇紀,true,false,false,false,false,false,false
+U05U9F70QKV,,https://secure.gravatar.com/avatar/6670a690366c0d23bd80d0c067583c39.jpg?s=512&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0024-512.png,dev-slack-message-finder,,false,false,false,false,false,true,false
+U05UQ8WLESV,,https://avatars.slack-edge.com/2023-09-28/5957023944310_991f23afc425d9226369_512.png,GitHub,,false,false,false,false,false,true,false

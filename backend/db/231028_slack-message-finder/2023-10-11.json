@@ -1,0 +1,59 @@
+[
+    {
+        "client_msg_id": "d405fa45-f2a1-425d-91c1-6adbe12065bc",
+        "type": "message",
+        "text": "<!channel>\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059\n<https://github.com/TMLlaboratory/slack-message-finder/pull/52>",
+        "user": "U05RX3M7P27",
+        "ts": "1697041071.037349",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "bZrVy",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "broadcast",
+                                "range": "channel"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n\u30ec\u30d3\u30e5\u30fc\u304a\u9858\u3044\u3057\u307e\u3059\n"
+                            },
+                            {
+                                "type": "link",
+                                "url": "https://github.com/TMLlaboratory/slack-message-finder/pull/52"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "team": "T05RX3HH4V9",
+        "attachments": [
+            {
+                "image_url": "https://user-images.githubusercontent.com/131850959/274346167-f15476f1-bbf5-4dd1-a807-d8f607a1a3c8.png",
+                "image_width": 2065,
+                "image_height": 1209,
+                "image_bytes": 198009,
+                "id": 1,
+                "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                "ts": 1697041026,
+                "color": "36a64f",
+                "bot_id": "B05V0KEQZUG",
+                "app_unfurl_url": "https://github.com/TMLlaboratory/slack-message-finder/pull/52",
+                "is_app_unfurl": true,
+                "app_id": "A01BP7R4KNY",
+                "fallback": "2065x1209px image",
+                "text": "*\u5bfe\u5fdc Issue40*\n\nresolve <https://github.com/TMLlaboratory/slack-message-finder/issues/40|#40>\n\n*\u6982\u8981*\n\n\u4f5c\u6210\u3055\u308c\u305f\u30b9\u30ec\u30c3\u30c9\u3084\u30e1\u30c3\u30bb\u30fc\u30b8\u30dc\u30c3\u30af\u30b9\u3092slack\u306e\u30c7\u30b6\u30a4\u30f3\u901a\u308a\u306b\u6574\u3048\u3066\u3044\u304f  \n\u305d\u3053\u306b\u30c7\u30fc\u30bf\u3092\u8868\u793a\u3059\u308b\u305f\u3081\u306bAPI\u3084\u30d5\u30ed\u30f3\u30c8\u306e\u30b7\u30b9\u30c6\u30e0\u3092\u6574\u3048\u308b  \n\u30c7\u30fc\u30bf\u3092\u8868\u793a\u3059\u308b\u305f\u3081\u306bcsv\u3067seed\u30c7\u30fc\u30bf\u3092\u5165\u308c\u308b  \n\u30c7\u30fc\u30bf\u3092\u8868\u793a\u3057\u305f\u4e0a\u3067\u30c7\u30b6\u30a4\u30f3\u3092\u6574\u3048\u308b\n\n*\u5b9f\u88c5\u5185\u5bb9*\n\n\u5404\u7a2econtroller\u3001routes\u3001CSS\u3001\u30da\u30fc\u30b8\u3001\u30b3\u30f3\u30dd\u30fc\u30cd\u30f3\u30c8\u306e\u30d5\u30a1\u30a4\u30eb\u306e\u7de8\u96c6\n\n*\u753b\u9762\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8\u7b49*\n\n\u2022 <http://localhost:8000/|http://localhost:8000/>  \n    <https://user-images.githubusercontent.com/131850959/274346167-f15476f1-bbf5-4dd1-a807-d8f607a1a3c8.png|\u30b9\u30af\u30ea\u30fc\u30f3\u30b7\u30e7\u30c3\u30c8 2023-10-12 1 13 33>\n\n*\u30c6\u30b9\u30c8\u9805\u76ee*\n\n\u2610 task build\u3067seed\u30c7\u30fc\u30bf\u3092\u5165\u308c\u308b\n\u2610 slack\u306e\u30c6\u30b9\u30c8\u30c1\u30e3\u30f3\u30cd\u30eb\u3067\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u5165\u308c\u308b\u3068\u8868\u793a\u3055\u308c\u308b\n\u2610 \u8fd4\u4fe1\u78ba\u8a8d\u30dc\u30bf\u30f3\u3092\u62bc\u3057\u305f\u6642\u3001\u3061\u3083\u3093\u3068\u8fd4\u4fe1\u304c\u898b\u308c\u308b\n\u2610 \u591a\u5c11\u30da\u30fc\u30b8\u3092\u6b6a\u307e\u305b\u3066\u3082\u3061\u3083\u3093\u3068\u6574\u3063\u305f\u30da\u30fc\u30b8\u306b\u306a\u3063\u3066\u3044\u308b\n\n*\u5099\u8003*",
+                "title": "#52 [feat]\u30e1\u30a4\u30f3\u30da\u30fc\u30b8\u306e\u5168\u4f53\u30c7\u30b6\u30a4\u30f3\u3001API\u3084\u30b7\u30b9\u30c6\u30e0\u3092\u6574\u3048\u308b",
+                "title_link": "https://github.com/TMLlaboratory/slack-message-finder/pull/52",
+                "footer": "<https://github.com/TMLlaboratory/slack-message-finder|TMLlaboratory/slack-message-finder>",
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ]
+    }
+]
