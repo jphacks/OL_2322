@@ -26,6 +26,9 @@
 .messagesBox {
     background-color: #2e2d2d;
     border: 3px solid #3e3d3d;
+    max-width: 100%; /* コンテナの最大幅を設定 */
+    word-break: break-word; /* 単語の折り返しを許可 */
+    white-space: pre-wrap; /* 改行と空白を保持 */
 }
 
 .replyBar {
@@ -33,6 +36,9 @@
     border-left: 3px solid #3e3d3d;
     border-top: 3px solid #3e3d3d;
     border: 3px solid #3e3d3d;
+    max-width: 100%; /* コンテナの最大幅を設定 */
+    word-break: break-word; /* 単語の折り返しを許可 */
+    white-space: pre-wrap; /* 改行と空白を保持 */
 }
 
 .channeltitle {
